@@ -3,32 +3,43 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>STUDIO SOCIAL — Creative Agency & Social-First Production</title>
-  <meta name="description" content="We create scroll-stopping content and social-first experiences that make brands impossible to ignore. Editorial creative production, fashion, beauty, and digital strategy.">
+  <title>Lucci Media — Boston's #1 Beauty &amp; Wellness Marketing Agency</title>
+  <meta name="description" content="We turn beauty + wellness brands into booked-out businesses. Social media management, Trending Socials content day retainers, brand photography, and high-converting campaigns across Boston &amp; New England.">
   
   <!-- Progressive Enhancement: Flag JS animation readiness instantly to prevent layout jump or FOUC -->
   <script>document.documentElement.classList.add('js-anim-ready');</script>
 
-  <!-- Favicon (SVG data URI for instant crisp luxury icon) -->
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23141312'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='56' fill='%23F8F5EE' font-weight='bold'>S</text></svg>">
+  <!-- Favicon (SVG stacked lockup: Lucci Media) -->
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' fill='%23231F20'/><text x='50%' y='46%' dominant-baseline='middle' text-anchor='middle' font-family='Montserrat, sans-serif' font-size='26' font-weight='900' fill='%23FDFDFC' letter-spacing='-0.02em'>LUCCI</text><text x='50%' y='66%' dominant-baseline='middle' text-anchor='middle' font-family='Montserrat, sans-serif' font-size='15' font-weight='300' fill='%237A808B' letter-spacing='0.28em'>MEDIA</text></svg>">
 
-  <!-- Google Fonts: Syne (bold display) + Plus Jakarta Sans (refined body) + Playfair Display (editorial italics) -->
+  <!-- Google Fonts: Montserrat (Headings & Body), Lekton (Eyebrows & Nav), Courier Prime (Typewriter), Script Fallbacks -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400;1,600&family=Plus+Jakarta+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Syne:wght@500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:ital,wght@0,400;0,700;1,400&family=Lekton:ital,wght@0,400;0,700;1,400&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700;1,800;1,900&family=Mrs+Saint+Delafield&family=Nothing+You+Could+Do&family=Pinyon+Script&display=swap" rel="stylesheet">
 
   <!-- Stylesheet -->
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="lm-body">
 
-  <!-- Top Editorial Micro Bar -->
+  <!-- SVG Noise Filter for Tactile Editorial Film Grain -->
+  <svg class="lm-grain-svg" aria-hidden="true" width="0" height="0">
+    <filter id="filmGrain">
+      <feTurbulence type="fractalNoise" baseFrequency="0.75" numOctaves="3" stitchTiles="stitch" />
+      <feColorMatrix type="matrix" values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 0.08 0" />
+    </filter>
+  </svg>
+  <div class="lm-grain-overlay" aria-hidden="true"></div>
+
+  <!-- Top Editorial Micro Bar (Black #231F20) -->
   <aside class="top-announcement-bar" aria-label="Agency Status">
     <div class="announcement-content">
       <span class="pulse-indicator" aria-hidden="true"></span>
-      <span class="announcement-text">COPENHAGEN &amp; WORLDWIDE &mdash; CURRENTLY ACCEPTING CLIENT COMMISSIONS FOR Q1/Q2</span>
+      <span class="announcement-text">NOW BOOKING 2027 &middot; LIMITED CLIENT ROSTER</span>
       <span class="announcement-divider" aria-hidden="true">&bull;</span>
-      <span class="announcement-tag">EST. 2024</span>
+      <span class="announcement-stat">BOSTON BASED &middot; 350+ BRANDS</span>
+      <span class="announcement-divider" aria-hidden="true">&bull;</span>
+      <span class="announcement-tag">EST. 2023</span>
     </div>
   </aside>
 
@@ -36,26 +47,27 @@
   <header class="site-header" id="header" role="banner">
     <div class="header-container">
       
-      <!-- Agency Wordmark -->
-      <a href="#hero" class="brand-logo" aria-label="STUDIO SOCIAL — Home">
-        <span class="logo-primary">STUDIO SOCIAL</span>
-        <span class="logo-subtext">CREATIVE AGENCY</span>
+      <!-- Lucci Media Horizontal Lockup (Final-01) -->
+      <a href="#hero" class="brand-logo" aria-label="Lucci Media &mdash; Home">
+        <span class="logo-lucci">LUCCI</span>
+        <span class="logo-media">MEDIA</span>
       </a>
 
       <!-- Desktop Navigation Links -->
       <nav class="desktop-nav" aria-label="Main Navigation">
         <ul class="nav-list">
-          <li class="nav-item"><a href="#hero" class="nav-link active">Home</a></li>
           <li class="nav-item"><a href="#services" class="nav-link">Services</a></li>
-          <li class="nav-item"><a href="#work" class="nav-link">Our Work</a></li>
-          <li class="nav-item"><a href="#about" class="nav-link">About</a></li>
+          <li class="nav-item"><a href="#path-picker" class="nav-link">Find Your Path</a></li>
+          <li class="nav-item"><a href="#work" class="nav-link">Client Work</a></li>
+          <li class="nav-item"><a href="#about" class="nav-link">About Lucci</a></li>
+          <li class="nav-item"><a href="#testimonials" class="nav-link">Reviews</a></li>
         </ul>
       </nav>
 
       <!-- Header Action & Mobile Toggle -->
       <div class="header-actions">
         <a href="#contact" class="btn btn-nav btn-talk" id="navTalkBtn">
-          <span>Let's Talk</span>
+          <span>Book a Strategy Call</span>
           <span class="btn-arrow" aria-hidden="true">&nearr;</span>
         </a>
 
@@ -73,22 +85,23 @@
     <div class="mobile-nav-overlay" id="mobileNav" aria-hidden="true">
       <div class="mobile-nav-inner">
         <div class="mobile-nav-meta">
-          <span class="mobile-meta-label">NAVIGATION</span>
-          <span class="mobile-meta-location">COPENHAGEN / GLOBAL</span>
+          <span class="mobile-meta-label">LUCCI MEDIA &middot; BOSTON</span>
+          <span class="mobile-meta-location">350+ BRANDS &middot; BOOKED ANYWHERE</span>
         </div>
         <ul class="mobile-nav-list">
-          <li><a href="#hero" class="mobile-nav-link">Home <span class="mobile-link-num">01</span></a></li>
-          <li><a href="#services" class="mobile-nav-link">Services <span class="mobile-link-num">02</span></a></li>
-          <li><a href="#work" class="mobile-nav-link">Our Work <span class="mobile-link-num">03</span></a></li>
-          <li><a href="#about" class="mobile-nav-link">About <span class="mobile-link-num">04</span></a></li>
-          <li><a href="#contact" class="mobile-nav-link">Contact <span class="mobile-link-num">05</span></a></li>
+          <li><a href="#services" class="mobile-nav-link">Services <span class="mobile-link-num">.01</span></a></li>
+          <li><a href="#path-picker" class="mobile-nav-link">Find Your Path <span class="mobile-link-num">.02</span></a></li>
+          <li><a href="#work" class="mobile-nav-link">Client Work <span class="mobile-link-num">.03</span></a></li>
+          <li><a href="#about" class="mobile-nav-link">About Lucci <span class="mobile-link-num">.04</span></a></li>
+          <li><a href="#testimonials" class="mobile-nav-link">Reviews <span class="mobile-link-num">.05</span></a></li>
+          <li><a href="#contact" class="mobile-nav-link">Apply to Work <span class="mobile-link-num">.06</span></a></li>
         </ul>
         <div class="mobile-nav-footer">
-          <a href="#contact" class="btn btn-primary btn-block mobile-cta-btn">Let's Talk &nearr;</a>
+          <a href="#contact" class="btn btn-primary btn-block mobile-cta-btn">Book a Strategy Call &nearr;</a>
           <div class="mobile-social-row">
-            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">Instagram</a>
-            <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">TikTok</a>
-            <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+            <a href="https://instagram.com/luccimedia" target="_blank" rel="noopener noreferrer">@luccimedia</a>
+            <a href="#contact">Boston HQ</a>
+            <a href="mailto:hello@luccimedia.com">Email</a>
           </div>
         </div>
       </div>
@@ -98,406 +111,260 @@
   <main id="main-content">
 
     <!-- ==============================================
-         HERO SECTION
+         01. HERO SECTION: Lucci Media Editorial
          ============================================== -->
     <section class="hero-section" id="hero" aria-labelledby="hero-heading">
       <div class="hero-container">
         
-        <!-- Hero Header & Typography Block -->
-        <div class="hero-text-block">
-          
-          <div class="hero-meta-badge reveal-up hero-anim-1">
-            <span class="badge-tag">SOCIAL-FIRST CREATIVE DIRECTION</span>
-            <span class="badge-separator">&bull;</span>
-            <span class="badge-year">EDITION 2026</span>
+        <!-- Left Hero Content Column -->
+        <div class="hero-content-col">
+          <div class="hero-eyebrow reveal-up hero-anim-1">
+            <span class="eyebrow-dot" aria-hidden="true"></span>
+            <span class="eyebrow-text">BOSTON BASED &middot; BEAUTY + WELLNESS AGENCY</span>
           </div>
 
+          <!-- Strict Headline from Brand Kit: Lowercase is on brand -->
           <h1 class="hero-heading reveal-text hero-anim-2" id="hero-heading">
-            <span class="heading-line-wrap"><span class="heading-line">GOOD CONTENT.</span></span>
-            <span class="heading-line-wrap"><span class="heading-line">GREAT ENERGY.</span></span>
-            <span class="heading-line-wrap"><span class="heading-line highlight-line">REAL IMPACT.</span></span>
+            <span class="hero-line"><span class="hero-line-inner">we turn beauty +</span></span>
+            <span class="hero-line"><span class="hero-line-inner">wellness brands into</span></span>
+            <span class="hero-line"><span class="hero-line-inner"><em>booked-out</em> businesses</span></span>
           </h1>
 
-          <p class="hero-support-text reveal-up hero-anim-3">
-            &ldquo;We create scroll-stopping content and social-first experiences that make brands impossible to ignore.&rdquo;
+          <p class="hero-subtext reveal-up hero-anim-3">
+            Don&rsquo;t follow industry standards. Work with the team creating them. Boston&rsquo;s #1 beauty marketing agency behind the brands everyone talks about.
           </p>
 
-          <!-- Hero CTAs -->
           <div class="hero-cta-group reveal-up hero-anim-4">
-            <a href="#work" class="btn btn-primary hero-btn">
-              <span>Explore Our Work</span>
-              <span class="btn-icon-down" aria-hidden="true">&darr;</span>
-            </a>
-            <a href="#contact" class="btn btn-secondary hero-btn">
-              <span>Let's Work Together</span>
+            <a href="#contact" class="btn btn-primary btn-curled-shadow">
+              <span>Book a Strategy Call</span>
               <span class="btn-arrow" aria-hidden="true">&nearr;</span>
             </a>
+            <a href="#work" class="btn btn-outline">
+              <span>View Client Work</span>
+              <span class="btn-arrow" aria-hidden="true">&darr;</span>
+            </a>
           </div>
 
-          <!-- Small Hero Footer Editorial Metrics -->
-          <div class="hero-stats-strip reveal-up hero-anim-5">
-            <div class="hero-stat-pill">
-              <span class="stat-num">48M+</span>
-              <span class="stat-desc">Organic Impressions</span>
-            </div>
-            <div class="hero-stat-divider"></div>
-            <div class="hero-stat-pill">
-              <span class="stat-num">100%</span>
-              <span class="stat-desc">Social-First Mindset</span>
-            </div>
-            <div class="hero-stat-divider"></div>
-            <div class="hero-stat-pill">
-              <span class="stat-num">98%</span>
-              <span class="stat-desc">Client Retention</span>
-            </div>
+          <div class="hero-proof-badge reveal-up hero-anim-5">
+            <span class="proof-number">350+</span>
+            <span class="proof-label">brands worked with across New England &amp; beyond</span>
           </div>
-
         </div>
 
-        <!-- Hero Editorial Asymmetrical Art-Directed Collage -->
-        <div class="hero-visual-collage" aria-label="Studio visual showcase">
-          
-          <!-- Collage Frame 1: Vertical 9:16 Social Frame (Main) -->
-          <figure class="collage-item collage-card-tall reveal-scale hero-anim-collage-1" data-speed="1.05">
-            <div class="card-inner">
-              <img src="assets/images/hero-fashion.jpg" alt="Editorial fashion campaign model in modern oversized coat" class="collage-img" fetchpriority="high">
-              <div class="editorial-overlay-tag top-left">
-                <span class="live-rec-dot" aria-hidden="true"></span>
-                <span>REC 4K // 9:16</span>
+        <!-- Right Hero Media Column: Editorial Studio Photo + Polaroid Overlays -->
+        <div class="hero-media-col reveal-scale hero-anim-3">
+          <div class="hero-composition">
+            
+            <!-- Main Editorial Image Frame with Film Negative Styling -->
+            <div class="hero-main-frame lm-film-frame">
+              <div class="film-edge-top">
+                <span class="film-text">FILM NEGATIVE &middot; 400 ISO</span>
+                <span class="film-frame-no">024A</span>
               </div>
-              <div class="editorial-overlay-tag bottom-right">
-                <span>CAMPAIGN SS26</span>
-              </div>
-            </div>
-            <figcaption class="sr-only">Fashion editorial campaign</figcaption>
-          </figure>
-
-          <!-- Collage Frame 2: Dewy Beauty Card -->
-          <figure class="collage-item collage-card-square reveal-right hero-anim-collage-2" data-speed="1.1">
-            <div class="card-inner">
-              <img src="assets/images/hero-beauty.jpg" alt="Dewy luminous skin clean beauty close-up" class="collage-img" fetchpriority="high">
-              <div class="editorial-overlay-pill">
-                <span>CLEAN BEAUTY</span>
+              <img src="assets/images/hero-beauty.jpg" alt="Lucci Media on set editorial shoot for high-end beauty client" class="hero-main-img" width="680" height="820" fetchpriority="high">
+              <div class="film-edge-bottom">
+                <span class="film-text">LUCCI MEDIA BOSTON &middot; STUDIO ARCHIVE</span>
+                <span class="film-frame-no">SAFETY FILM</span>
               </div>
             </div>
-            <figcaption class="sr-only">Clean beauty editorial shot</figcaption>
-          </figure>
 
-          <!-- Collage Frame 3: Lifestyle / Behind-The-Scenes -->
-          <figure class="collage-item collage-card-offset reveal-left hero-anim-collage-3" data-speed="0.95">
-            <div class="card-inner">
-              <img src="assets/images/hero-social.jpg" alt="Creative portrait on studio set" class="collage-img" fetchpriority="high">
-              <div class="floating-metric-card">
-                <span class="metric-val">+4.8M</span>
-                <span class="metric-label">Viral Campaign Views</span>
+            <!-- Tactile Polaroid with Translucent Tape (2 to 6 deg tilt) -->
+            <div class="lm-polaroid hero-polaroid-floating reveal-right hero-anim-4" style="--polaroid-tilt: -3.5deg;">
+              <div class="lm-tape lm-tape--top"></div>
+              <div class="lm-polaroid-photo">
+                <img src="assets/images/hero-social.jpg" alt="Behind the scenes content capture at med spa" width="240" height="240" loading="eager">
+              </div>
+              <div class="lm-polaroid-caption">
+                <span>booked out.</span>
               </div>
             </div>
-            <figcaption class="sr-only">Social campaign portrait</figcaption>
-          </figure>
 
-          <!-- Collage Frame 4: Design & Product Still -->
-          <figure class="collage-item collage-card-small reveal-scale hero-anim-collage-4" data-speed="1.15">
-            <div class="card-inner">
-              <img src="assets/images/hero-product.jpg" alt="Sculptural luxury perfume bottle with warm shadows" class="collage-img" fetchpriority="high">
+            <!-- Monogram Floating Seal -->
+            <div class="hero-monogram-badge reveal-scale hero-anim-5" aria-hidden="true">
+              <svg viewBox="0 0 100 100" class="monogram-circle-text">
+                <path id="heroCirclePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none"/>
+                <text font-size="10.5" font-family="Lekton, monospace" letter-spacing="0.14em" fill="#231F20">
+                  <textPath href="#heroCirclePath" startOffset="0%">
+                    LUCCI MEDIA &middot; BOSTON HQ &middot; EST. 2023 &middot;
+                  </textPath>
+                </text>
+              </svg>
+              <span class="monogram-center-letter">LM</span>
             </div>
-            <figcaption class="sr-only">Luxury product still</figcaption>
-          </figure>
 
-          <!-- Floating Rotating Emblem / Stamp -->
-          <div class="hero-stamp reveal-scale hero-anim-collage-5" aria-hidden="true">
-            <svg viewBox="0 0 100 100" class="rotating-text-svg">
-              <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none"/>
-              <text font-size="10.8" letter-spacing="2.2" fill="#141312" font-weight="600">
-                <textPath href="#circlePath">
-                  STUDIO SOCIAL &bull; COPENHAGEN &bull; CREATIVE &bull;
-                </textPath>
-              </text>
-            </svg>
-            <div class="stamp-center-star">&starf;</div>
           </div>
-
         </div>
 
       </div>
+
+      <!-- Giant Thin Watermark across bottom of hero (Inspired by The Social Agency reference) -->
+      <div class="hero-giant-wordmark" aria-hidden="true">
+        <span>LUCCI MEDIA</span>
+      </div>
     </section>
 
+
     <!-- ==============================================
-         CREATIVE MARQUEE TICKER (Section 9)
+         02. SCROLLING MARQUEE STRAP (Slate #545A6D)
          ============================================== -->
-    <section class="marquee-strip reveal" aria-label="Agency Mantra Ticker">
+    <section class="marquee-strip lm-band--brand reveal" aria-label="Agency Mantra Ticker">
       <div class="marquee-track">
         <div class="marquee-group">
-          <span class="marquee-item">GOOD PEOPLE. GOOD IDEAS. GREAT CONTENT.</span>
-          <span class="marquee-star" aria-hidden="true">&sext;</span>
-          <span class="marquee-item">GOOD PEOPLE. GOOD IDEAS. GREAT CONTENT.</span>
-          <span class="marquee-star" aria-hidden="true">&sext;</span>
-          <span class="marquee-item">GOOD PEOPLE. GOOD IDEAS. GREAT CONTENT.</span>
-          <span class="marquee-star" aria-hidden="true">&sext;</span>
+          <span class="marquee-item">BOSTON BASED</span>
+          <span class="marquee-dot">&middot;</span>
+          <span class="marquee-item">NEW ENGLAND&rsquo;S BEAUTY BRANDS</span>
+          <span class="marquee-dot">&middot;</span>
+          <span class="marquee-item">BOOKED ANYWHERE</span>
+          <span class="marquee-dot">&middot;</span>
+          <span class="marquee-item highlight">350+ BRANDS</span>
+          <span class="marquee-dot">&middot;</span>
+          <span class="marquee-item">MED SPAS</span>
+          <span class="marquee-dot">&middot;</span>
+          <span class="marquee-item">INJECTORS</span>
+          <span class="marquee-dot">&middot;</span>
+          <span class="marquee-item">SALONS</span>
+          <span class="marquee-dot">&middot;</span>
+          <span class="marquee-item">SKINCARE</span>
+          <span class="marquee-dot">&middot;</span>
         </div>
-        <!-- Duplicated for seamless loop -->
         <div class="marquee-group" aria-hidden="true">
-          <span class="marquee-item">GOOD PEOPLE. GOOD IDEAS. GREAT CONTENT.</span>
-          <span class="marquee-star">&sext;</span>
-          <span class="marquee-item">GOOD PEOPLE. GOOD IDEAS. GREAT CONTENT.</span>
-          <span class="marquee-star">&sext;</span>
-          <span class="marquee-item">GOOD PEOPLE. GOOD IDEAS. GREAT CONTENT.</span>
-          <span class="marquee-star">&sext;</span>
+          <span class="marquee-item">BOSTON BASED</span>
+          <span class="marquee-dot">&middot;</span>
+          <span class="marquee-item">NEW ENGLAND&rsquo;S BEAUTY BRANDS</span>
+          <span class="marquee-dot">&middot;</span>
+          <span class="marquee-item">BOOKED ANYWHERE</span>
+          <span class="marquee-dot">&middot;</span>
+          <span class="marquee-item highlight">350+ BRANDS</span>
+          <span class="marquee-dot">&middot;</span>
+          <span class="marquee-item">MED SPAS</span>
+          <span class="marquee-dot">&middot;</span>
+          <span class="marquee-item">INJECTORS</span>
+          <span class="marquee-dot">&middot;</span>
+          <span class="marquee-item">SALONS</span>
+          <span class="marquee-dot">&middot;</span>
+          <span class="marquee-item">SKINCARE</span>
+          <span class="marquee-dot">&middot;</span>
         </div>
       </div>
     </section>
 
-    <!-- ==============================================
-         BRAND INTRODUCTION SECTION (Section 6)
-         ============================================== -->
-    <section class="brand-intro-section" id="about" aria-labelledby="intro-heading">
-      <div class="container">
-        
-        <div class="intro-header-row">
-          <div class="section-label-pill reveal-up">
-            <span class="label-dot"></span>
-            <span>01 / ABOUT OUR PHILOSOPHY</span>
-          </div>
-          <div class="intro-geo-tag reveal-up">
-            <span>BASED IN COPENHAGEN &bull; WORKING GLOBALLY</span>
-          </div>
-        </div>
 
-        <div class="intro-main-grid">
+    <!-- ==============================================
+         03. SERVICES: THE STRATEGIC SPINE (.01 to .04)
+         ============================================== -->
+    <section class="services-section lm-band--paper" id="services" aria-labelledby="services-heading">
+      <div class="site-container">
+        
+        <header class="section-header reveal-up">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">.01</span>
+            <span class="eyebrow-text">CAPABILITIES &middot; THE STRATEGIC SPINE</span>
+          </div>
+          <h2 class="section-title" id="services-heading">the strategic spine</h2>
+          <p class="section-intro">
+            Awareness, consideration, conversion, loyalty. Success is measured in bookings, upsells and revenue, never views alone. Here is how we build the brands everyone talks about.
+          </p>
+        </header>
+
+        <div class="services-index-grid stagger-group">
           
-          <!-- Expressive Typography Column -->
-          <div class="intro-statement-col">
-            <h2 class="intro-heading reveal-up" id="intro-heading">
-              &ldquo;WE MAKE BRANDS <br>
-              FEEL LIKE <span class="editorial-italic">SOMETHING</span>.&rdquo;
-            </h2>
-
-            <p class="intro-support-copy reveal-up">
-              &ldquo;From the first idea to the final edit, we bring strategy, storytelling and creative production together to help brands show up with confidence.&rdquo;
+          <!-- .01 Social Media Management -->
+          <article class="service-index-card stagger-item" data-service="1">
+            <div class="service-card-meta">
+              <span class="service-card-number">.01</span>
+              <span class="service-card-tag">FULL SERVICE TAKEOVER</span>
+            </div>
+            <h3 class="service-card-title">Social Media Management</h3>
+            <p class="service-card-desc">
+              Full-service social media management for established med spas, salons, and beauty brands. Strategy, filming, editing, and posting. You just show up for the shoot.
             </p>
-
-            <div class="intro-pillars-list stagger-group reveal-up">
-              <div class="pillar-row stagger-item">
-                <span class="pillar-idx">[ 01 ]</span>
-                <div class="pillar-body">
-                  <h3 class="pillar-title">Editorial Sensibility</h3>
-                  <p class="pillar-desc">We apply high-fashion art direction, Scandinavian minimalism, and elevated taste to every frame.</p>
-                </div>
-              </div>
-
-              <div class="pillar-row stagger-item">
-                <span class="pillar-idx">[ 02 ]</span>
-                <div class="pillar-body">
-                  <h3 class="pillar-title">Social-Native Strategy</h3>
-                  <p class="pillar-desc">Built for the algorithmic era. We craft content that hooks within 1.2 seconds without sacrificing brand prestige.</p>
-                </div>
-              </div>
-
-              <div class="pillar-row stagger-item">
-                <span class="pillar-idx">[ 03 ]</span>
-                <div class="pillar-body">
-                  <h3 class="pillar-title">Holistic Production</h3>
-                  <p class="pillar-desc">From casting, scripting, and lighting to rapid post-production and trend-reactive distribution.</p>
-                </div>
-              </div>
+            <ul class="service-deliverables-list">
+              <li><span class="list-check">&check;</span> Monthly bespoke visual &amp; content strategy</li>
+              <li><span class="list-check">&check;</span> Full production shoot days in your clinic or salon</li>
+              <li><span class="list-check">&check;</span> High-converting short-form reels &amp; trend audio</li>
+              <li><span class="list-check">&check;</span> Daily community engagement &amp; inquiry routing</li>
+              <li><span class="list-check">&check;</span> Monthly analytics &amp; appointment revenue report</li>
+            </ul>
+            <div class="service-card-footer">
+              <span class="service-ideal-for"><strong>Best for:</strong> Established founders ready to completely delegate social.</span>
+              <a href="#contact" class="service-card-link" data-prefill="Social Media Management">
+                <span>Inquire &nearr;</span>
+              </a>
             </div>
+          </article>
 
-          </div>
-
-          <!-- Studio Moodboard & Visual Column -->
-          <div class="intro-visual-col">
-            <div class="intro-image-wrapper reveal-scale">
-              <img src="assets/images/brand-studio.jpg" alt="Studio Social creative direction studio and aesthetic moodboard" class="intro-image" loading="lazy">
-              <div class="intro-image-badge">
-                <span class="badge-title">THE STUDIO MANIFESTO</span>
-                <span class="badge-subtitle">Copenhagen Creative Hub</span>
-              </div>
+          <!-- .02 Trending Socials (Content Day Retainer) -->
+          <article class="service-index-card stagger-item featured-service" data-service="2">
+            <div class="service-card-meta">
+              <span class="service-card-number">.02</span>
+              <span class="service-card-tag">SIGNATURE RETAINER</span>
             </div>
-
-            <!-- Quantitative Impact Cards -->
-            <div class="intro-metrics-grid stagger-group reveal-up">
-              <div class="intro-metric-card stagger-item">
-                <span class="metric-counter" data-target="120">120+</span>
-                <span class="metric-title">Campaigns Directed</span>
-                <p class="metric-sub">Across fashion, luxury skincare, design &amp; lifestyle.</p>
-              </div>
-
-              <div class="intro-metric-card stagger-item">
-                <span class="metric-counter" data-target="4.8">4.8x</span>
-                <span class="metric-title">Average Engagement</span>
-                <p class="metric-sub">Higher than platform and industry benchmarks.</p>
-              </div>
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-    </section>
-
-    <!-- ==============================================
-         SERVICES SECTION (Section 7)
-         ============================================== -->
-    <section class="services-section" id="services" aria-labelledby="services-heading">
-      <div class="container">
-        
-        <div class="section-header-block">
-          <div class="section-label-pill reveal-up">
-            <span class="label-dot"></span>
-            <span>02 / OUR EXPERTISE</span>
-          </div>
-          <div class="section-title-wrap">
-            <h2 class="section-title reveal-up" id="services-heading">SERVICES &amp; CAPABILITIES</h2>
-            <p class="section-subtitle reveal-up">
-              Elevated, end-to-end creative solutions designed specifically for ambitious brands ready to command social culture.
+            <h3 class="service-card-title">Trending Socials</h3>
+            <p class="service-card-desc">
+              The signature content day retainer. We come into your space with cinema gear and capture a month of on-trend, high-aesthetic reels and stills designed specifically for beauty founders.
             </p>
-          </div>
-        </div>
-
-        <!-- 4 Distinctive Editorial Service Blocks -->
-        <div class="services-editorial-list stagger-group">
-
-          <!-- 01 — Content Creation -->
-          <article class="service-block stagger-item reveal-up" data-service="1">
-            <div class="service-header-row">
-              <div class="service-num-wrap">
-                <span class="service-num">01</span>
-                <span class="service-arrow" aria-hidden="true">&nearr;</span>
-              </div>
-              <div class="service-info-wrap">
-                <h3 class="service-name">Content Creation</h3>
-                <p class="service-core-description">
-                  Campaign shoots, short-form video, photography and social-first creative assets.
-                </p>
-              </div>
-            </div>
-
-            <div class="service-details-row">
-              <div class="service-tags-wrap">
-                <span class="service-pill">High-Fashion Lookbooks</span>
-                <span class="service-pill">TikTok &amp; Reels 9:16 Video</span>
-                <span class="service-pill">Studio &amp; Location Photography</span>
-                <span class="service-pill">Artistic Sound &amp; Color Grading</span>
-                <span class="service-pill">UGC-Curated Creative</span>
-              </div>
-              <p class="service-extended-text">
-                Every frame is crafted with intentional lighting, refined Scandinavian aesthetics, and hook-optimized pacing. We ensure your brand produces visuals that feel like high-end art while driving tangible engagement.
-              </p>
-            </div>
-
-            <div class="service-visual-preview">
-              <img src="assets/images/service-content.jpg" alt="Content Creation campaign production set" class="service-img" loading="lazy">
-              <div class="service-visual-overlay">
-                <span>01 // CAMPAIGN SHOOTS &amp; SHORT-FORM VIDEO</span>
-              </div>
+            <ul class="service-deliverables-list">
+              <li><span class="list-check">&check;</span> Dedicated monthly on-location content shoot</li>
+              <li><span class="list-check">&check;</span> Rapid turnaround batch-edited reels &amp; still photos</li>
+              <li><span class="list-check">&check;</span> Early audio trend spotting before sounds saturate</li>
+              <li><span class="list-check">&check;</span> Native beauty skin smoothing &amp; editorial color grading</li>
+              <li><span class="list-check">&check;</span> Done-for-you hook scripts, captions &amp; direct links</li>
+            </ul>
+            <div class="service-card-footer">
+              <span class="service-ideal-for"><strong>Best for:</strong> Teams with an in-house poster who need NYC-caliber creative on tap.</span>
+              <a href="#contact" class="service-card-link" data-prefill="Trending Socials Retainer">
+                <span>Inquire &nearr;</span>
+              </a>
             </div>
           </article>
 
-          <!-- 02 — Social Media Management -->
-          <article class="service-block stagger-item reveal-up" data-service="2">
-            <div class="service-header-row">
-              <div class="service-num-wrap">
-                <span class="service-num">02</span>
-                <span class="service-arrow" aria-hidden="true">&nearr;</span>
-              </div>
-              <div class="service-info-wrap">
-                <h3 class="service-name">Social Media Management</h3>
-                <p class="service-core-description">
-                  Content calendars, platform strategy, publishing and community engagement.
-                </p>
-              </div>
+          <!-- .03 Brand Photography -->
+          <article class="service-index-card stagger-item" data-service="3">
+            <div class="service-card-meta">
+              <span class="service-card-number">.03</span>
+              <span class="service-card-tag">STUDIO &amp; EDITORIAL</span>
             </div>
-
-            <div class="service-details-row">
-              <div class="service-tags-wrap">
-                <span class="service-pill">Content Calendar Curation</span>
-                <span class="service-pill">Multi-Platform Strategy</span>
-                <span class="service-pill">Daily Publishing &amp; Moderation</span>
-                <span class="service-pill">Community Dialogue</span>
-                <span class="service-pill">Trend Hijacking &amp; Audio</span>
-              </div>
-              <p class="service-extended-text">
-                Consistency without boredom. We curate your brand grid like an editorial magazine, managing publishing rhythms, cultural conversations, and community relationships so your feed stays continually magnetic.
-              </p>
-            </div>
-
-            <div class="service-visual-preview">
-              <img src="assets/images/service-social.jpg" alt="Social Media Management curated feed and platform analytics" class="service-img" loading="lazy">
-              <div class="service-visual-overlay">
-                <span>02 // EDITORIAL CURATION &amp; COMMUNITY</span>
-              </div>
+            <h3 class="service-card-title">Brand Photography</h3>
+            <p class="service-card-desc">
+              Studio editorial and on-location beauty campaigns. Softboxes, seamless backdrops, sculptural poses, macro skin and product textures that elevate your brand to luxury editorial standard.
+            </p>
+            <ul class="service-deliverables-list">
+              <li><span class="list-check">&check;</span> High-res studio stills &amp; macro beauty textures</li>
+              <li><span class="list-check">&check;</span> Treatment demonstration &amp; injector precision shots</li>
+              <li><span class="list-check">&check;</span> Founder portraits &amp; executive team lookbooks</li>
+              <li><span class="list-check">&check;</span> Full commercial licensing &amp; magazine retouching</li>
+              <li><span class="list-check">&check;</span> Turnkey mood board, styling &amp; prop direction</li>
+            </ul>
+            <div class="service-card-footer">
+              <span class="service-ideal-for"><strong>Best for:</strong> Rebrands, new treatment launches, website rebuilds &amp; press.</span>
+              <a href="#contact" class="service-card-link" data-prefill="Brand Photography">
+                <span>Inquire &nearr;</span>
+              </a>
             </div>
           </article>
 
-          <!-- 03 — Creative Strategy -->
-          <article class="service-block stagger-item reveal-up" data-service="3">
-            <div class="service-header-row">
-              <div class="service-num-wrap">
-                <span class="service-num">03</span>
-                <span class="service-arrow" aria-hidden="true">&nearr;</span>
-              </div>
-              <div class="service-info-wrap">
-                <h3 class="service-name">Creative Strategy</h3>
-                <p class="service-core-description">
-                  Brand positioning, campaign concepts, storytelling and creative direction.
-                </p>
-              </div>
+          <!-- .04 Campaigns -->
+          <article class="service-index-card stagger-item" data-service="4">
+            <div class="service-card-meta">
+              <span class="service-card-number">.04</span>
+              <span class="service-card-tag">LAUNCHES &amp; ROSTER</span>
             </div>
-
-            <div class="service-details-row">
-              <div class="service-tags-wrap">
-                <span class="service-pill">Brand Positioning</span>
-                <span class="service-pill">Campaign Concept Ideation</span>
-                <span class="service-pill">Visual Moodboards &amp; Art Direction</span>
-                <span class="service-pill">Narrative Scripting</span>
-                <span class="service-pill">Cultural Resonance Audits</span>
-              </div>
-              <p class="service-extended-text">
-                Before shooting a single second, we establish the intellectual and aesthetic foundation. We define what your brand stands for, who it speaks to, and why they should stop scrolling to listen.
-              </p>
-            </div>
-
-            <div class="service-visual-preview">
-              <img src="assets/images/service-strategy.jpg" alt="Creative Strategy conceptual moodboard and brand positioning" class="service-img" loading="lazy">
-              <div class="service-visual-overlay">
-                <span>03 // BRAND NARRATIVE &amp; ART DIRECTION</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- 04 — Digital Campaigns -->
-          <article class="service-block stagger-item reveal-up" data-service="4">
-            <div class="service-header-row">
-              <div class="service-num-wrap">
-                <span class="service-num">04</span>
-                <span class="service-arrow" aria-hidden="true">&nearr;</span>
-              </div>
-              <div class="service-info-wrap">
-                <h3 class="service-name">Digital Campaigns</h3>
-                <p class="service-core-description">
-                  Social campaigns, creative testing and performance-focused content.
-                </p>
-              </div>
-            </div>
-
-            <div class="service-details-row">
-              <div class="service-tags-wrap">
-                <span class="service-pill">Paid Social Creative Direction</span>
-                <span class="service-pill">Iterative Creative Testing</span>
-                <span class="service-pill">Hook &amp; Retention Analytics</span>
-                <span class="service-pill">Product Launches</span>
-                <span class="service-pill">Influencer &amp; Creator Synergies</span>
-              </div>
-              <p class="service-extended-text">
-                Where aesthetics meet performance. We produce high-converting campaign variants, analyze algorithmic retention drops, and continuously test messaging to scale your brand's revenue and awareness.
-              </p>
-            </div>
-
-            <div class="service-visual-preview">
-              <img src="assets/images/service-campaign.jpg" alt="Digital Campaigns performance creative and high energy social launch" class="service-img" loading="lazy">
-              <div class="service-visual-overlay">
-                <span>04 // HIGH-PERFORMANCE SOCIAL LAUNCHES</span>
-              </div>
+            <h3 class="service-card-title">Campaigns</h3>
+            <p class="service-card-desc">
+              High-impact launches for new treatments, seasonal promotions, product drops, and med spa expansions designed to fill appointment calendars in days, not months.
+            </p>
+            <ul class="service-deliverables-list">
+              <li><span class="list-check">&check;</span> Multi-week launch roadmap &amp; announcement timeline</li>
+              <li><span class="list-check">&check;</span> Teaser reels, countdown stories &amp; waitlist funnels</li>
+              <li><span class="list-check">&check;</span> Local VIP creator &amp; injector gifting seeding</li>
+              <li><span class="list-check">&check;</span> Paid social ad creative engineered for consults</li>
+              <li><span class="list-check">&check;</span> Post-campaign revenue &amp; patient acquisition audit</li>
+            </ul>
+            <div class="service-card-footer">
+              <span class="service-ideal-for"><strong>Best for:</strong> Clinic openings, device launches &amp; seasonal booked-out rushes.</span>
+              <a href="#contact" class="service-card-link" data-prefill="Campaigns">
+                <span>Inquire &nearr;</span>
+              </a>
             </div>
           </article>
 
@@ -506,331 +373,636 @@
       </div>
     </section>
 
+
     <!-- ==============================================
-         FEATURED WORK / PORTFOLIO SECTION (Section 8)
+         04. INTERACTIVE PATH PICKER (Ree Creative Pattern)
          ============================================== -->
-    <section class="work-section" id="work" aria-labelledby="work-heading">
-      <div class="container">
+    <section class="path-picker-section lm-band--stone" id="path-picker" aria-labelledby="path-heading">
+      <div class="site-container">
         
-        <div class="work-header-wrap">
-          <div class="section-label-pill reveal-up">
-            <span class="label-dot"></span>
-            <span>03 / SELECTED WORKS</span>
+        <header class="section-header reveal-up">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">.02</span>
+            <span class="eyebrow-text">START HERE &middot; YOUR BUSINESS STAGE</span>
           </div>
-          
-          <div class="work-title-flex">
-            <div>
-              <h2 class="section-title reveal-up" id="work-heading">MADE TO BE SEEN.</h2>
-              <p class="section-subtitle reveal-up">
-                &ldquo;A little look at what happens when good ideas meet great execution.&rdquo;
-              </p>
-            </div>
+          <h2 class="section-title" id="path-heading">where are you right now?</h2>
+          <p class="section-intro">
+            Select your current business priority to reveal the exact service and deliverables built for your stage.
+          </p>
+        </header>
 
-            <!-- Portfolio Category Filter Tabs -->
-            <div class="portfolio-filter-group reveal-up" role="tablist" aria-label="Portfolio Category Filter">
-              <button type="button" class="filter-btn active" role="tab" aria-selected="true" data-filter="all">All Work</button>
-              <button type="button" class="filter-btn" role="tab" aria-selected="false" data-filter="beauty">Beauty</button>
-              <button type="button" class="filter-btn" role="tab" aria-selected="false" data-filter="fashion">Fashion</button>
-              <button type="button" class="filter-btn" role="tab" aria-selected="false" data-filter="product">Product</button>
-              <button type="button" class="filter-btn" role="tab" aria-selected="false" data-filter="social">Social-First</button>
-            </div>
-          </div>
-        </div>
-
-        <!-- Asymmetrical Editorial Portfolio Grid -->
-        <div class="portfolio-grid stagger-group" id="portfolioGrid">
-
-          <!-- Project 01: Beauty Campaigns -->
-          <article class="portfolio-item item-large stagger-item reveal-scale" data-category="beauty" data-index="1">
-            <div class="portfolio-card">
-              <div class="portfolio-img-box">
-                <img src="assets/images/work-skincare.jpg" alt="Lumen Skincare - Clean Light Campaign" class="portfolio-img" loading="lazy">
-                <div class="portfolio-hover-overlay">
-                  <div class="hover-content">
-                    <span class="hover-tag">BEAUTY CAMPAIGN</span>
-                    <span class="hover-cta">View Case Study &nearr;</span>
-                  </div>
-                </div>
-                <div class="portfolio-corner-badge">SS26</div>
-              </div>
-              <div class="portfolio-meta">
-                <div class="portfolio-client-info">
-                  <span class="portfolio-cat">Beauty &amp; Skincare &bull; 360&deg; Campaign</span>
-                  <h3 class="portfolio-title">Lumen Skincare &mdash; The Clean Light Campaign</h3>
-                </div>
-                <span class="portfolio-year">2026</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 02: Fashion & Lifestyle -->
-          <article class="portfolio-item item-medium stagger-item reveal-scale" data-category="fashion" data-index="2">
-            <div class="portfolio-card">
-              <div class="portfolio-img-box">
-                <img src="assets/images/work-fashion.jpg" alt="Maison Nord Copenhagen SS26 Fashion Run" class="portfolio-img" loading="lazy">
-                <div class="portfolio-hover-overlay">
-                  <div class="hover-content">
-                    <span class="hover-tag">FASHION &amp; LIFESTYLE</span>
-                    <span class="hover-cta">View Case Study &nearr;</span>
-                  </div>
-                </div>
-                <div class="portfolio-corner-badge">EDITORIAL</div>
-              </div>
-              <div class="portfolio-meta">
-                <div class="portfolio-client-info">
-                  <span class="portfolio-cat">Fashion &amp; Apparel &bull; Lookbook &amp; Reels</span>
-                  <h3 class="portfolio-title">Maison Nord &mdash; SS26 Copenhagen Run</h3>
-                </div>
-                <span class="portfolio-year">2026</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 03: Product Photography -->
-          <article class="portfolio-item item-medium stagger-item reveal-scale" data-category="product" data-index="3">
-            <div class="portfolio-card">
-              <div class="portfolio-img-box">
-                <img src="assets/images/work-botanical.jpg" alt="Aura Botanicals Zero-Proof Elixirs" class="portfolio-img" loading="lazy">
-                <div class="portfolio-hover-overlay">
-                  <div class="hover-content">
-                    <span class="hover-tag">PRODUCT PHOTOGRAPHY</span>
-                    <span class="hover-cta">View Case Study &nearr;</span>
-                  </div>
-                </div>
-                <div class="portfolio-corner-badge">PACKAGING</div>
-              </div>
-              <div class="portfolio-meta">
-                <div class="portfolio-client-info">
-                  <span class="portfolio-cat">Product Photography &bull; Art Direction</span>
-                  <h3 class="portfolio-title">Aura Botanicals &mdash; Zero-Proof Elixirs</h3>
-                </div>
-                <span class="portfolio-year">2025</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 04: Social Media Campaigns -->
-          <article class="portfolio-item item-tall stagger-item reveal-scale" data-category="social" data-index="4">
-            <div class="portfolio-card">
-              <div class="portfolio-img-box">
-                <img src="assets/images/work-social.jpg" alt="Velvet Archive Viral TikTok Launch" class="portfolio-img" loading="lazy">
-                <div class="portfolio-hover-overlay">
-                  <div class="hover-content">
-                    <span class="hover-tag">SOCIAL-FIRST VIDEO</span>
-                    <span class="hover-cta">View Case Study &nearr;</span>
-                  </div>
-                </div>
-                <div class="portfolio-corner-badge">9:16 VIRAL</div>
-              </div>
-              <div class="portfolio-meta">
-                <div class="portfolio-client-info">
-                  <span class="portfolio-cat">Social Media Campaign &bull; TikTok Strategy</span>
-                  <h3 class="portfolio-title">Velvet Archive &mdash; Viral TikTok Launch</h3>
-                </div>
-                <span class="portfolio-year">2026</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 05: Creative Brand Visuals -->
-          <article class="portfolio-item item-medium stagger-item reveal-scale" data-category="product" data-index="5">
-            <div class="portfolio-card">
-              <div class="portfolio-img-box">
-                <img src="assets/images/work-ceramics.jpg" alt="Køben Ceramics Form & Tactility" class="portfolio-img" loading="lazy">
-                <div class="portfolio-hover-overlay">
-                  <div class="hover-content">
-                    <span class="hover-tag">CREATIVE BRAND VISUALS</span>
-                    <span class="hover-cta">View Case Study &nearr;</span>
-                  </div>
-                </div>
-                <div class="portfolio-corner-badge">INTERIORS</div>
-              </div>
-              <div class="portfolio-meta">
-                <div class="portfolio-client-info">
-                  <span class="portfolio-cat">Creative Brand Visuals &bull; Visual Identity</span>
-                  <h3 class="portfolio-title">Køben Ceramics &mdash; Form &amp; Tactility</h3>
-                </div>
-                <span class="portfolio-year">2025</span>
-              </div>
-            </div>
-          </article>
-
-          <!-- Project 06: Luxury Campaign -->
-          <article class="portfolio-item item-large stagger-item reveal-scale" data-category="beauty" data-index="6">
-            <div class="portfolio-card">
-              <div class="portfolio-img-box">
-                <img src="assets/images/work-parfum.jpg" alt="Séance Parfum Scent of Silence" class="portfolio-img" loading="lazy">
-                <div class="portfolio-hover-overlay">
-                  <div class="hover-content">
-                    <span class="hover-tag">DIGITAL CAMPAIGN</span>
-                    <span class="hover-cta">View Case Study &nearr;</span>
-                  </div>
-                </div>
-                <div class="portfolio-corner-badge">FILM &amp; STILLS</div>
-              </div>
-              <div class="portfolio-meta">
-                <div class="portfolio-client-info">
-                  <span class="portfolio-cat">Luxury Beauty &bull; Campaign Stills &amp; Film</span>
-                  <h3 class="portfolio-title">Séance Parfum &mdash; Scent of Silence</h3>
-                </div>
-                <span class="portfolio-year">2026</span>
-              </div>
-            </div>
-          </article>
-
-        </div>
-
-        <!-- Functional VIEW ALL WORK Destination / Expansion Block -->
-        <div class="work-footer-cta reveal-up">
-          <button type="button" class="btn btn-outline btn-all-work" id="viewAllWorkBtn" aria-expanded="false" aria-controls="workArchiveDrawer">
-            <span class="btn-text">VIEW ALL WORK</span>
-            <span class="btn-count">(06 / 24 ARCHIVE)</span>
-            <span class="btn-arrow" aria-hidden="true">&nearr;</span>
+        <!-- Selector Button Tabs -->
+        <div class="path-tabs-row reveal-up" role="tablist" aria-label="Business Need Selector">
+          <button type="button" class="path-tab-btn active" role="tab" aria-selected="true" id="tab-content" aria-controls="panel-content" data-path="content">
+            <span class="tab-bubble">01</span>
+            <span class="tab-text">&ldquo;I need content&rdquo;</span>
+          </button>
+          <button type="button" class="path-tab-btn" role="tab" aria-selected="false" id="tab-team" aria-controls="panel-team" data-path="team">
+            <span class="tab-bubble">02</span>
+            <span class="tab-text">&ldquo;I need a full team&rdquo;</span>
+          </button>
+          <button type="button" class="path-tab-btn" role="tab" aria-selected="false" id="tab-shoot" aria-controls="panel-shoot" data-path="shoot">
+            <span class="tab-bubble">03</span>
+            <span class="tab-text">&ldquo;I need a brand shoot&rdquo;</span>
+          </button>
+          <button type="button" class="path-tab-btn" role="tab" aria-selected="false" id="tab-campaign" aria-controls="panel-campaign" data-path="campaign">
+            <span class="tab-bubble">04</span>
+            <span class="tab-text">&ldquo;I need a campaign&rdquo;</span>
           </button>
         </div>
 
-        <!-- Collapsible Archive Showcase -->
-        <div class="work-archive-drawer" id="workArchiveDrawer" aria-hidden="true">
-          <div class="archive-drawer-inner">
-            <div class="archive-notice">
-              <span class="archive-label">COMMISSIONED CLIENT ARCHIVE</span>
-              <p>Full confidential case studies, media analytics, and pitch deck archives are presented upon direct request during client consultations.</p>
-              <a href="#contact" class="btn btn-primary btn-sm">Request Private Portfolio Deck &nearr;</a>
+        <!-- Dynamic Library Card Display Component -->
+        <div class="path-display-wrap reveal-up">
+          <div class="lm-library-card" id="pathCardDisplay">
+            
+            <div class="library-card-header">
+              <div class="library-header-meta">
+                <span class="library-tag">RECOMMENDED MATCH</span>
+                <span class="library-code" id="pathMatchCode">TS-2027</span>
+              </div>
+              <h3 class="library-match-title" id="pathMatchTitle">Trending Socials (Content Day Retainer)</h3>
+              <p class="library-match-hook" id="pathMatchHook">You have an assistant or coordinator who posts, but the visuals look amateur and don&rsquo;t reflect the quality of your services.</p>
             </div>
+
+            <div class="library-card-body">
+              <div class="library-spec-col">
+                <span class="spec-label">WHAT WE DELIVER</span>
+                <p class="spec-val" id="pathDeliverables">1 monthly shoot day &middot; 16 to 20 native high-conversion reels &middot; Curated still photography gallery &middot; Trending beauty audio curation &middot; Hook templates</p>
+              </div>
+              <div class="library-spec-col">
+                <span class="spec-label">TIMELINE &amp; COMMITMENT</span>
+                <p class="spec-val" id="pathTimeline">Monthly retainer &middot; 3-month initial runway &middot; Content delivered 7 days post-shoot</p>
+              </div>
+              <div class="library-spec-col">
+                <span class="spec-label">WHO IT IS BUILT FOR</span>
+                <p class="spec-val" id="pathIdeal">Med spas, master injectors, and high-volume estheticians who want scroll-stopping content without being glued to their phone.</p>
+              </div>
+            </div>
+
+            <div class="library-card-action">
+              <div class="action-note">
+                <span class="script-accent">&ldquo;the one everyone talks about&rdquo;</span>
+              </div>
+              <a href="#contact" class="btn btn-primary btn-curled-shadow" id="pathApplyBtn">
+                <span>Apply for this Package &nearr;</span>
+              </a>
+            </div>
+
           </div>
         </div>
 
       </div>
     </section>
 
-    <!-- ==============================================
-         EDITORIAL QUOTE & CLIENT TAPE
-         ============================================== -->
-    <section class="testimonial-section" aria-label="Client Words">
-      <div class="container">
-        <div class="testimonial-box reveal-scale">
-          <div class="quote-mark" aria-hidden="true">&ldquo;</div>
-          <blockquote class="testimonial-quote">
-            STUDIO SOCIAL DOESN'T JUST MAKE CONTENT; THEY CREATE CULTURAL MOMENTUM. OUR SS26 LAUNCH WAS OUR HIGHEST-CONVERTING CAMPAIGN TO DATE.
-          </blockquote>
-          <div class="testimonial-author">
-            <img src="assets/images/testimonial-avatar.jpg" alt="Astrid Lindqvist" class="author-avatar" loading="lazy">
-            <div class="author-details">
-              <span class="author-name">Astrid Lindqvist</span>
-              <span class="author-role">Founder &amp; Creative Director &mdash; Maison Nord Copenhagen</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- Minimalist Brand Partner Logotypes -->
-        <div class="brand-partners-tape reveal-up" aria-label="Brand Partners">
-          <span class="partner-label">TRUSTED BY AMBITIOUS GLOBAL BRANDS:</span>
-          <div class="partners-grid stagger-group">
-            <span class="partner-logo stagger-item">LUMEN LABS</span>
-            <span class="partner-logo stagger-item">MAISON NORD</span>
-            <span class="partner-logo stagger-item">AURA COPENHAGEN</span>
-            <span class="partner-logo stagger-item">VELVET ATELIER</span>
-            <span class="partner-logo stagger-item">KØBEN STUDIO</span>
-            <span class="partner-logo stagger-item">SÉANCE PARFUM</span>
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- ==============================================
-         HOW WE WORK SECTION (Section 10)
+         05. CLIENT WORK / EDITORIAL CASE STUDIES
          ============================================== -->
-    <section class="process-section" id="process" aria-labelledby="process-heading">
-      <div class="container">
+    <section class="work-section lm-band--paper" id="work" aria-labelledby="work-heading">
+      <div class="site-container">
         
-        <div class="section-header-block">
-          <div class="section-label-pill reveal-up">
-            <span class="label-dot"></span>
-            <span>04 / OUR METHODOLOGY</span>
+        <header class="section-header reveal-up">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">.03</span>
+            <span class="eyebrow-text">PORTFOLIO &middot; CLIENT WORK</span>
           </div>
-          <div class="section-title-wrap">
-            <h2 class="section-title reveal-up" id="process-heading">HOW WE WORK</h2>
-            <p class="section-subtitle reveal-up">
-              A disciplined, high-touch creative production pipeline from initial spark to sustained cultural resonance.
+          <div class="work-header-split">
+            <div class="work-title-wrap">
+              <h2 class="section-title" id="work-heading">the brands everyone talks about</h2>
+              <p class="section-intro">
+                A curated selection of med spas, injectors, salons and skincare brands across Boston and New England with fully booked calendars.
+              </p>
+            </div>
+            
+            <!-- Category Filter Tabs -->
+            <div class="work-filter-tabs" role="tablist" aria-label="Filter Portfolio by Category">
+              <button type="button" class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All Work</button>
+              <button type="button" class="filter-btn" data-filter="social" role="tab" aria-selected="false">Social Management</button>
+              <button type="button" class="filter-btn" data-filter="content" role="tab" aria-selected="false">Trending Socials</button>
+              <button type="button" class="filter-btn" data-filter="photo" role="tab" aria-selected="false">Brand Photography</button>
+              <button type="button" class="filter-btn" data-filter="campaign" role="tab" aria-selected="false">Campaigns</button>
+            </div>
+          </div>
+        </header>
+
+        <!-- Portfolio Grid with Film Negative Frames -->
+        <div class="portfolio-grid stagger-group" id="portfolioGrid">
+
+          <!-- Case Study 01: Aura Med Spa -->
+          <article class="portfolio-item stagger-item" data-category="social" data-id="1">
+            <div class="portfolio-film-wrap lm-film-frame">
+              <div class="film-edge-top">
+                <span class="film-text">AURA MED SPA &middot; BOSTON</span>
+                <span class="film-frame-no">01A</span>
+              </div>
+              <div class="portfolio-img-box">
+                <img src="assets/images/work-skincare.jpg" alt="Aura Med Spa clinical skincare and injectable treatment campaign" width="600" height="750" loading="lazy">
+                <div class="portfolio-hover-overlay">
+                  <span class="view-case-pill">View Case &nearr;</span>
+                </div>
+              </div>
+              <div class="film-edge-bottom">
+                <span class="film-text">FULL SOCIAL TAKEOVER</span>
+                <span class="film-frame-no">+40 CONSULTS</span>
+              </div>
+            </div>
+            <div class="portfolio-item-meta">
+              <div class="item-tags">
+                <span class="item-category">Social Media Management</span>
+                <span class="item-year">2026</span>
+              </div>
+              <h3 class="item-client-name">Aura Med Spa Back Bay</h3>
+              <p class="item-result-highlight">40 new consults booked in first 30 days of launch</p>
+            </div>
+          </article>
+
+          <!-- Case Study 02: The Injector Club -->
+          <article class="portfolio-item stagger-item" data-category="content" data-id="2">
+            <div class="portfolio-film-wrap lm-film-frame">
+              <div class="film-edge-top">
+                <span class="film-text">THE INJECTOR CLUB &middot; REEL SERIES</span>
+                <span class="film-frame-no">02A</span>
+              </div>
+              <div class="portfolio-img-box">
+                <img src="assets/images/work-social.jpg" alt="The Injector Club viral high-aesthetic reel campaign" width="600" height="750" loading="lazy">
+                <div class="portfolio-hover-overlay">
+                  <span class="view-case-pill">View Case &nearr;</span>
+                </div>
+              </div>
+              <div class="film-edge-bottom">
+                <span class="film-text">TRENDING SOCIALS RETAINER</span>
+                <span class="film-frame-no">$94K REVENUE</span>
+              </div>
+            </div>
+            <div class="portfolio-item-meta">
+              <div class="item-tags">
+                <span class="item-category">Trending Socials</span>
+                <span class="item-year">2026</span>
+              </div>
+              <h3 class="item-client-name">The Injector Club</h3>
+              <p class="item-result-highlight">$94K direct booking revenue generated from short-form reels</p>
+            </div>
+          </article>
+
+          <!-- Case Study 03: L'Étoile Atelier Salon -->
+          <article class="portfolio-item stagger-item" data-category="photo" data-id="3">
+            <div class="portfolio-film-wrap lm-film-frame">
+              <div class="film-edge-top">
+                <span class="film-text">L'ÉTOILE ATELIER &middot; EDITORIAL</span>
+                <span class="film-frame-no">03A</span>
+              </div>
+              <div class="portfolio-img-box">
+                <img src="assets/images/work-fashion.jpg" alt="L'Étoile Atelier editorial salon brand photography" width="600" height="750" loading="lazy">
+                <div class="portfolio-hover-overlay">
+                  <span class="view-case-pill">View Case &nearr;</span>
+                </div>
+              </div>
+              <div class="film-edge-bottom">
+                <span class="film-text">BRAND PHOTOGRAPHY</span>
+                <span class="film-frame-no">BOOKED 6 MOS</span>
+              </div>
+            </div>
+            <div class="portfolio-item-meta">
+              <div class="item-tags">
+                <span class="item-category">Brand Photography</span>
+                <span class="item-year">2025</span>
+              </div>
+              <h3 class="item-client-name">L&rsquo;&Eacute;toile Atelier Salon</h3>
+              <p class="item-result-highlight">Master stylists completely booked 6 months in advance</p>
+            </div>
+          </article>
+
+          <!-- Case Study 04: Botanical Skin Lab -->
+          <article class="portfolio-item stagger-item" data-category="campaign" data-id="4">
+            <div class="portfolio-film-wrap lm-film-frame">
+              <div class="film-edge-top">
+                <span class="film-text">BOTANICAL SKIN LAB &middot; LAUNCH</span>
+                <span class="film-frame-no">04A</span>
+              </div>
+              <div class="portfolio-img-box">
+                <img src="assets/images/work-botanical.jpg" alt="Botanical Skin Lab clean skincare treatment launch" width="600" height="750" loading="lazy">
+                <div class="portfolio-hover-overlay">
+                  <span class="view-case-pill">View Case &nearr;</span>
+                </div>
+              </div>
+              <div class="film-edge-bottom">
+                <span class="film-text">CAMPAIGNS</span>
+                <span class="film-frame-no">+320% INQUIRIES</span>
+              </div>
+            </div>
+            <div class="portfolio-item-meta">
+              <div class="item-tags">
+                <span class="item-category">Campaigns</span>
+                <span class="item-year">2026</span>
+              </div>
+              <h3 class="item-client-name">Botanical Skin Lab</h3>
+              <p class="item-result-highlight">320% inquiry surge during 14-day treatment launch</p>
+            </div>
+          </article>
+
+          <!-- Case Study 05: Soma Wellness House -->
+          <article class="portfolio-item stagger-item" data-category="social" data-id="5">
+            <div class="portfolio-film-wrap lm-film-frame">
+              <div class="film-edge-top">
+                <span class="film-text">SOMA WELLNESS &middot; SOCIAL</span>
+                <span class="film-frame-no">05A</span>
+              </div>
+              <div class="portfolio-img-box">
+                <img src="assets/images/work-ceramics.jpg" alt="Soma Wellness holistic aesthetic studio content" width="600" height="750" loading="lazy">
+                <div class="portfolio-hover-overlay">
+                  <span class="view-case-pill">View Case &nearr;</span>
+                </div>
+              </div>
+              <div class="film-edge-bottom">
+                <span class="film-text">SOCIAL MEDIA MANAGEMENT</span>
+                <span class="film-frame-no">1.4M VIEWS</span>
+              </div>
+            </div>
+            <div class="portfolio-item-meta">
+              <div class="item-tags">
+                <span class="item-category">Social Media Management</span>
+                <span class="item-year">2025</span>
+              </div>
+              <h3 class="item-client-name">Soma Wellness House</h3>
+              <p class="item-result-highlight">1.4M targeted Boston-area views with 18% profile conversion</p>
+            </div>
+          </article>
+
+          <!-- Case Study 06: Maison Glow Studio -->
+          <article class="portfolio-item stagger-item" data-category="photo" data-id="6">
+            <div class="portfolio-film-wrap lm-film-frame">
+              <div class="film-edge-top">
+                <span class="film-text">MAISON GLOW &middot; STILL LIFE</span>
+                <span class="film-frame-no">06A</span>
+              </div>
+              <div class="portfolio-img-box">
+                <img src="assets/images/work-parfum.jpg" alt="Maison Glow studio luxury treatment visual direction" width="600" height="750" loading="lazy">
+                <div class="portfolio-hover-overlay">
+                  <span class="view-case-pill">View Case &nearr;</span>
+                </div>
+              </div>
+              <div class="film-edge-bottom">
+                <span class="film-text">BRAND PHOTOGRAPHY</span>
+                <span class="film-frame-no">88% RETENTION</span>
+              </div>
+            </div>
+            <div class="portfolio-item-meta">
+              <div class="item-tags">
+                <span class="item-category">Brand Photography</span>
+                <span class="item-year">2026</span>
+              </div>
+              <h3 class="item-client-name">Maison Glow Studio</h3>
+              <p class="item-result-highlight">88% rebooking retention for signature glass skin protocol</p>
+            </div>
+          </article>
+
+        </div>
+
+        <!-- View All Work Drawer Button -->
+        <div class="work-actions-row reveal-up">
+          <button type="button" class="btn btn-outline btn-all-work" id="viewAllWorkBtn" aria-expanded="false" aria-controls="workArchiveDrawer">
+            <span class="btn-text-state">View Additional Archive Work</span>
+            <span class="btn-count-tag">+3 Projects</span>
+            <span class="btn-arrow-icon" aria-hidden="true">&darr;</span>
+          </button>
+        </div>
+
+        <!-- Collapsible Archive Drawer -->
+        <div class="work-archive-drawer" id="workArchiveDrawer" aria-hidden="true">
+          <div class="archive-grid">
+            
+            <article class="portfolio-item" data-category="campaign" data-id="7">
+              <div class="portfolio-film-wrap lm-film-frame">
+                <img src="assets/images/service-campaign.jpg" alt="Nova Derm Clinic grand opening launch" width="500" height="620" loading="lazy">
+              </div>
+              <div class="portfolio-item-meta">
+                <span class="item-category">Campaigns &middot; 2026</span>
+                <h4 class="item-client-name">Nova Derm Clinic</h4>
+                <p class="item-result-highlight">Grand opening waitlist reached 340 patients in 10 days</p>
+              </div>
+            </article>
+
+            <article class="portfolio-item" data-category="content" data-id="8">
+              <div class="portfolio-film-wrap lm-film-frame">
+                <img src="assets/images/service-content.jpg" alt="Studio Brow and Lash content day retainer capture" width="500" height="620" loading="lazy">
+              </div>
+              <div class="portfolio-item-meta">
+                <span class="item-category">Trending Socials &middot; 2025</span>
+                <h4 class="item-client-name">Studio Brow &amp; Lash</h4>
+                <p class="item-result-highlight">22 batch reels generated 4.8M views across TikTok &amp; IG</p>
+              </div>
+            </article>
+
+            <article class="portfolio-item" data-category="photo" data-id="9">
+              <div class="portfolio-film-wrap lm-film-frame">
+                <img src="assets/images/hero-product.jpg" alt="Élixir Botanique high luxury skincare bottle photography" width="500" height="620" loading="lazy">
+              </div>
+              <div class="portfolio-item-meta">
+                <span class="item-category">Brand Photography &middot; 2026</span>
+                <h4 class="item-client-name">&Eacute;lixir Botanique</h4>
+                <p class="item-result-highlight">Featured across Vogue Scandinavia &amp; luxury beauty press</p>
+              </div>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==============================================
+         06. PROOF BAND (Black #231F20)
+         ============================================== -->
+    <section class="proof-band-section lm-band--dark reveal" aria-label="Agency Track Record &amp; Proof">
+      <div class="site-container">
+        
+        <header class="proof-header reveal-up">
+          <span class="proof-eyebrow">PROOF THAT HITS HARD &middot; THE NUMBERS</span>
+          <h2 class="proof-title">trusted by 350+ brands</h2>
+          <p class="proof-lead">
+            The visionary agency the beauty industry&rsquo;s most talked about names have in common: if you&rsquo;re anybody, you&rsquo;re working with Lucci Media.
+          </p>
+        </header>
+
+        <!-- Big Stat Counters -->
+        <div class="proof-stats-grid stagger-group">
+          
+          <div class="proof-stat-card stagger-item">
+            <div class="stat-number-wrap">
+              <span class="stat-num counter-target" data-count="350">350</span><span class="stat-suffix">+</span>
+            </div>
+            <span class="stat-label">BRANDS WORKED WITH</span>
+            <span class="stat-sub">Med spas, master injectors, luxury salons &amp; skincare founders</span>
+          </div>
+
+          <div class="proof-stat-card stagger-item">
+            <div class="stat-number-wrap">
+              <span class="stat-num counter-target" data-count="10">10</span><span class="stat-suffix">+</span>
+            </div>
+            <span class="stat-label">YEARS IN INDUSTRY</span>
+            <span class="stat-sub">Licensed esthetician &amp; creator who has sat in every chair</span>
+          </div>
+
+          <div class="proof-stat-card stagger-item">
+            <div class="stat-number-wrap">
+              <span class="stat-num counter-target" data-count="40">40</span>
+            </div>
+            <span class="stat-label">NEW CONSULTS (AVG. 30 DAYS)</span>
+            <span class="stat-sub">Measurable appointment bookings, never vanity metrics alone</span>
+          </div>
+
+          <div class="proof-stat-card stagger-item">
+            <div class="stat-number-wrap">
+              <span class="stat-num">100</span><span class="stat-suffix">%</span>
+            </div>
+            <span class="stat-label">BEAUTY &amp; WELLNESS SPECIALTY</span>
+            <span class="stat-sub">No generalist agency templates &mdash; 100% dedicated to beauty</span>
+          </div>
+
+        </div>
+
+        <!-- Client Logos Strip (Lekton caps typography tickers) -->
+        <div class="proof-client-ticker-wrap reveal-up">
+          <span class="ticker-label">PROUD PARTNERS ACROSS NEW ENGLAND:</span>
+          <div class="proof-client-names">
+            <span>AURA MED SPA</span>
+            <span class="dot">&bull;</span>
+            <span>THE INJECTOR CLUB</span>
+            <span class="dot">&bull;</span>
+            <span>L&rsquo;&Eacute;TOILE ATELIER</span>
+            <span class="dot">&bull;</span>
+            <span>BOTANICAL SKIN LAB</span>
+            <span class="dot">&bull;</span>
+            <span>SOMA WELLNESS HOUSE</span>
+            <span class="dot">&bull;</span>
+            <span>MAISON GLOW</span>
+            <span class="dot">&bull;</span>
+            <span>NOVA DERM</span>
+            <span class="dot">&bull;</span>
+            <span>BACK BAY ESTHETICS</span>
+            <span class="dot">&bull;</span>
+            <span>ATELIER BEAUT&Eacute;</span>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==============================================
+         07. MEET LUCCI (About Founder & Brand Voice)
+         ============================================== -->
+    <section class="about-section lm-band--stone" id="about" aria-labelledby="about-heading">
+      <div class="site-container">
+        
+        <div class="about-grid">
+          
+          <!-- Left Column: Layered Polaroid with Translucent Tape -->
+          <div class="about-visual-col reveal-left">
+            <div class="about-polaroid-stack">
+              
+              <!-- Subtle Background Notebook Grid -->
+              <div class="about-notebook-card lm-notebook-card">
+                <div class="notebook-holes">
+                  <span class="hole"></span>
+                  <span class="hole"></span>
+                  <span class="hole"></span>
+                </div>
+                <div class="notebook-lines">
+                  <div class="notebook-meta-row">
+                    <span class="meta-key">AGENCY:</span>
+                    <span class="meta-val">LUCCI MEDIA</span>
+                  </div>
+                  <div class="notebook-meta-row">
+                    <span class="meta-key">FOUNDED:</span>
+                    <span class="meta-val">DECEMBER 2023</span>
+                  </div>
+                  <div class="notebook-meta-row">
+                    <span class="meta-key">HQ:</span>
+                    <span class="meta-val">BOSTON, MA</span>
+                  </div>
+                  <div class="notebook-meta-row">
+                    <span class="meta-key">EXPERIENCE:</span>
+                    <span class="meta-val">10+ YEARS &middot; LICENSED ESTHETICIAN</span>
+                  </div>
+                  <div class="notebook-meta-row">
+                    <span class="meta-key">FOCUS:</span>
+                    <span class="meta-val">MED SPAS, SALONS, BEAUTY BRANDS</span>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Main Polaroid of Lucci (Tilted 3.5 deg with Translucent Tape) -->
+              <div class="lm-polaroid about-main-polaroid reveal-scale" style="--polaroid-tilt: 3.5deg;">
+                <div class="lm-tape lm-tape--top"></div>
+                <div class="lm-polaroid-photo">
+                  <img src="assets/images/brand-studio.jpg" alt="Lex Lucci Luciano founder of Lucci Media in Boston studio" width="420" height="480" loading="lazy">
+                </div>
+                <div class="lm-polaroid-caption">
+                  <span>the one everyone talks about</span>
+                </div>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Right Column: Founder Narrative & Approved Brand Lines -->
+          <div class="about-content-col reveal-right">
+            
+            <div class="section-eyebrow">
+              <span class="eyebrow-num">.04</span>
+              <span class="eyebrow-text">THE FOUNDER &middot; LEX &ldquo;LUCCI&rdquo; LUCIANO</span>
+            </div>
+
+            <!-- Approved Founder Line from Brand Kit -->
+            <h2 class="about-founder-title" id="about-heading">
+              as the professional behind the chair, as the face in front of the camera, and now as the person building the brands
+            </h2>
+
+            <div class="about-narrative">
+              <p class="lead-paragraph">
+                Lucci Media was founded in December 2023 by Lex &ldquo;Lucci&rdquo; Luciano. With 10+ years of beauty industry experience and a licensed esthetician, Lucci built an influential career working with globally recognized brands before building the agency. She has sat in every chair her clients sit in.
+              </p>
+              <p>
+                We don&rsquo;t follow industry standards. We work with the team creating them. Our clients aren&rsquo;t looking for generic agency templates or vanity metrics &mdash; they want an editorial aesthetic that commands premium rates and books out treatment calendars.
+              </p>
+              <p>
+                Boston based. New England&rsquo;s beauty brands. Booked anywhere.
+              </p>
+            </div>
+
+            <!-- Founder Quote Callout -->
+            <div class="about-quote-callout">
+              <p class="callout-quote-text">
+                &ldquo;Your chair should be booked before you post about it.&rdquo;
+              </p>
+              <div class="callout-author-row">
+                <span class="author-name">Lex &ldquo;Lucci&rdquo; Luciano</span>
+                <span class="author-title">Founder &amp; Creative Director</span>
+                <span class="author-sig" aria-hidden="true">Lex Luciano</span>
+              </div>
+            </div>
+
+            <div class="about-cta-row">
+              <a href="#contact" class="btn btn-primary btn-curled-shadow">
+                <span>Work with Lucci Media &nearr;</span>
+              </a>
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+
+    <!-- ==============================================
+         08. STUDIO & CITY (Boston Editorial)
+         ============================================== -->
+    <section class="studio-city-section lm-band--paper reveal" aria-label="Boston Studio &amp; Locations">
+      <div class="site-container">
+        
+        <div class="studio-city-banner">
+          <div class="studio-city-text">
+            <span class="studio-eyebrow">OUR CITY &middot; YOUR BRAND</span>
+            <h3 class="studio-title">Boston based. New England&rsquo;s beauty brands. Booked anywhere.</h3>
+            <p class="studio-desc">
+              From our studio production days at Social Haus Boston to on-location shoots throughout Back Bay, Seaport, Providence, and across New England &mdash; our team travels wherever your brand needs us.
             </p>
           </div>
+
+          <div class="studio-polaroid-wrap">
+            <div class="lm-polaroid studio-polaroid" style="--polaroid-tilt: -2deg;">
+              <div class="lm-tape lm-tape--top"></div>
+              <div class="lm-polaroid-photo">
+                <img src="assets/images/process-1.jpg" alt="Boston Back Bay architecture and studio setting" width="340" height="340" loading="lazy">
+              </div>
+              <div class="lm-polaroid-caption">
+                <span>our city. your brand.</span>
+              </div>
+            </div>
+          </div>
         </div>
 
-        <!-- Three Elegant Process Steps -->
-        <div class="process-grid stagger-group">
+      </div>
+    </section>
 
-          <!-- 01 — DISCOVER -->
-          <article class="process-card stagger-item reveal-up">
-            <div class="process-top">
-              <span class="process-step-num">01</span>
-              <span class="process-phase-tag">PHASE 01 // AUDIT</span>
+
+    <!-- ==============================================
+         09. CLIENT TESTIMONIALS (Words from Founders)
+         ============================================== -->
+    <section class="testimonial-section lm-band--stone" id="testimonials" aria-labelledby="testimonial-heading">
+      <div class="site-container">
+        
+        <header class="section-header reveal-up">
+          <div class="section-eyebrow">
+            <span class="eyebrow-num">.05</span>
+            <span class="eyebrow-text">CLIENT WORDS &middot; PROOF</span>
+          </div>
+          <h2 class="section-title" id="testimonial-heading">words from founders</h2>
+        </header>
+
+        <div class="testimonials-slider-row stagger-group">
+          
+          <!-- Testimonial 01 -->
+          <article class="testimonial-editorial-card stagger-item">
+            <div class="card-index-row">
+              <span class="card-index">.01 / .03</span>
+              <span class="card-tag">MED SPA FOUNDER</span>
             </div>
-
-            <div class="process-body">
-              <h3 class="process-step-title">DISCOVER</h3>
-              <p class="process-step-lead">
-                We learn about your brand, audience and goals.
-              </p>
-              
-              <div class="process-image-card">
-                <img src="assets/images/process-1.jpg" alt="Discovery and brand positioning session" class="process-thumb" loading="lazy">
+            <blockquote class="testimonial-quote">
+              &ldquo;Your chair should be booked before you post about it. In our first 60 days with Lucci Media, our injectable calendar filled out three weeks in advance. They understand med spa patients better than anyone in Boston.&rdquo;
+            </blockquote>
+            <div class="testimonial-author-meta">
+              <div class="author-avatar-wrap">
+                <img src="assets/images/testimonial-avatar.jpg" alt="Dr. Elena Vance" width="52" height="52" loading="lazy">
               </div>
-
-              <ul class="process-deliverables-list">
-                <li><span class="bullet-dash">&mdash;</span> In-depth brand architecture &amp; audience analysis</li>
-                <li><span class="bullet-dash">&mdash;</span> Social competitor landscape &amp; algorithmic benchmarking</li>
-                <li><span class="bullet-dash">&mdash;</span> Visual tone of voice &amp; aesthetic references</li>
-              </ul>
+              <div class="author-info">
+                <cite class="author-name">Dr. Elena Vance</cite>
+                <span class="author-clinic">Founder, Back Bay Aesthetics</span>
+              </div>
             </div>
           </article>
 
-          <!-- 02 — CREATE -->
-          <article class="process-card stagger-item reveal-up">
-            <div class="process-top">
-              <span class="process-step-num">02</span>
-              <span class="process-phase-tag">PHASE 02 // PRODUCTION</span>
+          <!-- Testimonial 02 -->
+          <article class="testimonial-editorial-card stagger-item">
+            <div class="card-index-row">
+              <span class="card-index">.02 / .03</span>
+              <span class="card-tag">LUXURY SALON OWNER</span>
             </div>
-
-            <div class="process-body">
-              <h3 class="process-step-title">CREATE</h3>
-              <p class="process-step-lead">
-                We turn strategy into thoughtful concepts and compelling content.
-              </p>
-              
-              <div class="process-image-card">
-                <img src="assets/images/process-2.jpg" alt="Creative production and studio filming" class="process-thumb" loading="lazy">
+            <blockquote class="testimonial-quote">
+              &ldquo;Lucci has sat in our chair. She gets the rhythm of a high-end salon. The content shoot days are completely seamless, and our clients constantly compliment the feed. We are now booked six months ahead.&rdquo;
+            </blockquote>
+            <div class="testimonial-author-meta">
+              <div class="author-avatar-wrap">
+                <img src="assets/images/process-3.jpg" alt="Camille Rossi" width="52" height="52" loading="lazy">
               </div>
-
-              <ul class="process-deliverables-list">
-                <li><span class="bullet-dash">&mdash;</span> Editorial campaign concepting &amp; shot-lists</li>
-                <li><span class="bullet-dash">&mdash;</span> Full studio &amp; on-location creative production</li>
-                <li><span class="bullet-dash">&mdash;</span> High-retention 9:16 video editing, color &amp; audio</li>
-              </ul>
+              <div class="author-info">
+                <cite class="author-name">Camille Rossi</cite>
+                <span class="author-clinic">Creative Director, L&rsquo;&Eacute;toile Atelier</span>
+              </div>
             </div>
           </article>
 
-          <!-- 03 — GROW -->
-          <article class="process-card stagger-item reveal-up">
-            <div class="process-top">
-              <span class="process-step-num">03</span>
-              <span class="process-phase-tag">PHASE 03 // ELEVATION</span>
+          <!-- Testimonial 03 -->
+          <article class="testimonial-editorial-card stagger-item">
+            <div class="card-index-row">
+              <span class="card-index">.03 / .03</span>
+              <span class="card-tag">SKINCARE FOUNDER</span>
             </div>
-
-            <div class="process-body">
-              <h3 class="process-step-title">GROW</h3>
-              <p class="process-step-lead">
-                We help your brand show up consistently and build meaningful connections.
-              </p>
-              
-              <div class="process-image-card">
-                <img src="assets/images/process-3.jpg" alt="Growth metrics and campaign optimization" class="process-thumb" loading="lazy">
+            <blockquote class="testimonial-quote">
+              &ldquo;40 new consults from our first month campaign alone. Lucci Media isn&rsquo;t an agency trying beauty; they are the standard for beauty marketing. If you want booked out, work with them.&rdquo;
+            </blockquote>
+            <div class="testimonial-author-meta">
+              <div class="author-avatar-wrap">
+                <img src="assets/images/process-2.jpg" alt="Maya Lin" width="52" height="52" loading="lazy">
               </div>
-
-              <ul class="process-deliverables-list">
-                <li><span class="bullet-dash">&mdash;</span> Strategic publishing rhythm &amp; community ignition</li>
-                <li><span class="bullet-dash">&mdash;</span> Iterative content testing &amp; hook optimization</li>
-                <li><span class="bullet-dash">&mdash;</span> Monthly insights, qualitative reporting &amp; scale</li>
-              </ul>
+              <div class="author-info">
+                <cite class="author-name">Maya Lin</cite>
+                <span class="author-clinic">Founder, Botanical Skin Lab</span>
+              </div>
             </div>
           </article>
 
@@ -839,108 +1011,116 @@
       </div>
     </section>
 
+
     <!-- ==============================================
-         FINAL CTA SECTION (Section 11)
+         10. CLOSING CTA SECTION (Slate #545A6D Brand Band)
          ============================================== -->
-    <section class="final-cta-section" id="contact" aria-labelledby="cta-heading">
-      <div class="container">
+    <section class="final-cta-section lm-band--brand" id="contact" aria-labelledby="cta-heading">
+      <div class="site-container">
         
-        <div class="cta-card-wrapper reveal-scale">
+        <div class="cta-split-layout">
           
-          <div class="cta-inner-grid">
-            
-            <!-- Left Info Block -->
-            <div class="cta-text-side reveal-up">
-              
-              <div class="cta-label-pill">
-                <span class="live-rec-dot" aria-hidden="true"></span>
-                <span>NOW ACCEPTING NEW CLIENTS</span>
-              </div>
-
-              <h2 class="cta-main-heading" id="cta-heading">
-                GOT A GOOD FEELING ABOUT THIS?
-              </h2>
-
-              <p class="cta-support-text">
-                &ldquo;Let's create something your audience won't scroll past.&rdquo;
-              </p>
-
-              <div class="cta-meta-points">
-                <div class="cta-meta-item">
-                  <span class="cta-check">&check;</span>
-                  <span>Direct collaboration with senior creative directors</span>
-                </div>
-                <div class="cta-meta-item">
-                  <span class="cta-check">&check;</span>
-                  <span>Fast turnaround &bull; High-touch studio execution</span>
-                </div>
-                <div class="cta-meta-item">
-                  <span class="cta-check">&check;</span>
-                  <span>Copenhagen studio or worldwide on-location</span>
-                </div>
-              </div>
-
-              <div class="cta-contact-direct">
-                <span class="direct-label">DIRECT INQUIRIES:</span>
-                <a href="mailto:hello@studiosocialagency.com" class="direct-email-link">hello@studiosocialagency.com</a>
-              </div>
-
+          <!-- Left Column: Exclusive Roster Pitch -->
+          <div class="cta-message-col reveal-left">
+            <div class="cta-eyebrow">
+              <span class="eyebrow-dot-white" aria-hidden="true"></span>
+              <span class="eyebrow-text">LIMITED CLIENT ROSTER &middot; BY APPLICATION ONLY</span>
             </div>
 
-            <!-- Right Interactive Inquiry Form -->
-            <div class="cta-form-side reveal-up">
+            <h2 class="cta-main-heading" id="cta-heading">
+              you can&rsquo;t just book us.<br><em>apply.</em>
+            </h2>
+
+            <p class="cta-lead-text">
+              we turn beauty + wellness brands into booked-out businesses.
+            </p>
+
+            <div class="cta-guidelines-box">
+              <span class="box-title">BEFORE YOU APPLY:</span>
+              <ul class="box-list">
+                <li>We only partner with established beauty &amp; wellness brands ready to scale.</li>
+                <li>Retainers require an initial 3-month commitment for strategic compound growth.</li>
+                <li>Strategy calls are conducted directly with Lex Luciano &amp; agency leads.</li>
+              </ul>
+            </div>
+
+            <div class="cta-direct-contact">
+              <span class="contact-label">DIRECT EMAIL:</span>
+              <a href="mailto:hello@luccimedia.com" class="contact-email-link">hello@luccimedia.com</a>
+              <span class="contact-hq">Back Bay &middot; Boston, MA &middot; Available Worldwide</span>
+            </div>
+          </div>
+
+          <!-- Right Column: Tactile Application Form -->
+          <div class="cta-form-col reveal-right">
+            <div class="inquiry-form-card">
+              
+              <div class="form-card-header">
+                <span class="form-badge">CLIENT APPLICATION &middot; 2027</span>
+                <h3 class="form-card-title">Book a Strategy Call</h3>
+                <p class="form-card-sub">Tell us about your brand and what you want to achieve.</p>
+              </div>
+
               <form class="inquiry-form" id="inquiryForm" novalidate>
                 
-                <h3 class="form-title">START A PROJECT</h3>
-                <p class="form-subtitle">Tell us about your brand vision and timeline.</p>
-
                 <div class="form-group">
-                  <label for="clientName" class="form-label">YOUR NAME *</label>
-                  <input type="text" id="clientName" name="name" class="form-input" placeholder="Astrid Lindqvist" required>
+                  <label for="clientName" class="form-label">Your Full Name *</label>
+                  <input type="text" id="clientName" name="name" class="form-input" placeholder="Lex Luciano" required>
                   <span class="form-error-msg" id="nameError">Please enter your name</span>
                 </div>
 
                 <div class="form-group">
-                  <label for="clientEmail" class="form-label">WORK EMAIL *</label>
-                  <input type="email" id="clientEmail" name="email" class="form-input" placeholder="astrid@brand.com" required>
-                  <span class="form-error-msg" id="emailError">Please enter a valid email address</span>
+                  <label for="clientEmail" class="form-label">Work Email *</label>
+                  <input type="email" id="clientEmail" name="email" class="form-input" placeholder="lex@yourbrand.com" required>
+                  <span class="form-error-msg" id="emailError">Please enter a valid business email</span>
+                </div>
+
+                <div class="form-row-two">
+                  <div class="form-group">
+                    <label for="brandName" class="form-label">Brand / Med Spa *</label>
+                    <input type="text" id="brandName" name="brand" class="form-input" placeholder="Aura Aesthetics" required>
+                  </div>
+                  <div class="form-group">
+                    <label for="clientInstagram" class="form-label">Instagram Handle *</label>
+                    <input type="text" id="clientInstagram" name="instagram" class="form-input" placeholder="@yourbrand" required>
+                  </div>
                 </div>
 
                 <div class="form-group">
-                  <label for="clientService" class="form-label">SERVICE OF INTEREST</label>
+                  <label for="clientService" class="form-label">Desired Service *</label>
                   <select id="clientService" name="service" class="form-select">
-                    <option value="all-services">360&deg; Creative &amp; Social Direction</option>
-                    <option value="content-creation">01 &mdash; Content Creation (Photo/Video)</option>
-                    <option value="social-management">02 &mdash; Social Media Management</option>
-                    <option value="creative-strategy">03 &mdash; Creative Strategy</option>
-                    <option value="digital-campaigns">04 &mdash; Digital Campaigns</option>
+                    <option value="Social Media Management">Social Media Management (.01)</option>
+                    <option value="Trending Socials Retainer" selected>Trending Socials Content Day Retainer (.02)</option>
+                    <option value="Brand Photography">Brand Photography &amp; Editorial (.03)</option>
+                    <option value="Campaigns">Treatment Launch / Expansion Campaign (.04)</option>
+                    <option value="Full Agency Retainer">Full Multi-Service Partnership</option>
                   </select>
                 </div>
 
                 <div class="form-group">
-                  <label for="clientBudget" class="form-label">ESTIMATED BUDGET</label>
+                  <label for="clientBudget" class="form-label">Estimated Monthly Investment *</label>
                   <select id="clientBudget" name="budget" class="form-select">
-                    <option value="5k-10k">&euro;5,000 &mdash; &euro;10,000</option>
-                    <option value="10k-25k" selected>&euro;10,000 &mdash; &euro;25,000</option>
-                    <option value="25k-50k">&euro;25,000 &mdash; &euro;50,000</option>
-                    <option value="50k+">&euro;50,000+</option>
+                    <option value="$3,000 &ndash; $5,000 / mo">$3,000 &ndash; $5,000 / mo (Content Retainers)</option>
+                    <option value="$5,000 &ndash; $8,000 / mo" selected>$5,000 &ndash; $8,000 / mo (Full Management)</option>
+                    <option value="$8,000 &ndash; $12,000+ / mo">$8,000 &ndash; $12,000+ / mo (Campaigns &amp; Scale)</option>
                   </select>
                 </div>
 
                 <div class="form-group">
-                  <label for="clientMessage" class="form-label">PROJECT DETAILS</label>
-                  <textarea id="clientMessage" name="message" class="form-textarea" rows="3" placeholder="Tell us about your brand, timeline, and what you want to create..."></textarea>
+                  <label for="clientMessage" class="form-label">What are you looking to achieve? *</label>
+                  <textarea id="clientMessage" name="message" class="form-textarea" rows="3" placeholder="Tell us about your clinic, current booking bottlenecks, and goals..."></textarea>
                 </div>
 
-                <button type="submit" class="btn btn-primary btn-block btn-submit-cta" id="submitInquiryBtn">
-                  <span>LET'S MAKE IT HAPPEN &nearr;</span>
+                <button type="submit" class="btn btn-dark-submit btn-block" id="submitInquiryBtn">
+                  <span>Apply to Work with Us</span>
+                  <span class="btn-arrow" aria-hidden="true">&nearr;</span>
                 </button>
 
                 <div class="form-feedback-message" id="formFeedback" role="alert" aria-live="polite"></div>
 
               </form>
-            </div>
 
+            </div>
           </div>
 
         </div>
@@ -950,118 +1130,144 @@
 
   </main>
 
+
   <!-- ==============================================
-       FOOTER (Section 12)
+       11. SITE FOOTER (Black #231F20)
        ============================================== -->
-  <footer class="site-footer" role="contentinfo">
-    <div class="container">
-      
-      <!-- Footer Top Row -->
-      <div class="footer-top-grid stagger-group">
+  <footer class="site-footer lm-band--dark" role="contentinfo">
+    
+    <!-- Instagram Photo Strip -->
+    <div class="footer-insta-strip" aria-label="Instagram Feed Preview">
+      <div class="insta-strip-header">
+        <span class="insta-label">FOLLOW ALONG ON INSTAGRAM</span>
+        <a href="https://instagram.com/luccimedia" target="_blank" rel="noopener noreferrer" class="insta-handle">@luccimedia &nearr;</a>
+      </div>
+      <div class="insta-photos-grid">
+        <div class="insta-photo-box">
+          <img src="assets/images/hero-beauty.jpg" alt="Lucci Media Instagram feed 1" width="220" height="220" loading="lazy">
+        </div>
+        <div class="insta-photo-box">
+          <img src="assets/images/hero-social.jpg" alt="Lucci Media Instagram feed 2" width="220" height="220" loading="lazy">
+        </div>
+        <div class="insta-photo-box">
+          <img src="assets/images/work-skincare.jpg" alt="Lucci Media Instagram feed 3" width="220" height="220" loading="lazy">
+        </div>
+        <div class="insta-photo-box">
+          <img src="assets/images/brand-studio.jpg" alt="Lucci Media Instagram feed 4" width="220" height="220" loading="lazy">
+        </div>
+        <div class="insta-photo-box">
+          <img src="assets/images/work-fashion.jpg" alt="Lucci Media Instagram feed 5" width="220" height="220" loading="lazy">
+        </div>
+        <div class="insta-photo-box">
+          <img src="assets/images/process-1.jpg" alt="Lucci Media Instagram feed 6" width="220" height="220" loading="lazy">
+        </div>
+      </div>
+    </div>
+
+    <!-- Main Footer Body -->
+    <div class="footer-main-container">
+      <div class="site-container">
         
-        <!-- Brand Info -->
-        <div class="footer-brand-col stagger-item reveal-up">
-          <a href="#hero" class="footer-logo">STUDIO SOCIAL</a>
-          <p class="footer-statement">
-            We bridge the gap between high-fashion editorial aesthetics and high-retention social performance. Based in Copenhagen, working with visionary brands worldwide.
-          </p>
-          <div class="footer-clock-box">
-            <span class="clock-label">COPENHAGEN LOCAL TIME:</span>
-            <span class="clock-time" id="cphClock">12:00:00 CET</span>
-          </div>
-        </div>
-
-        <!-- Navigation Links -->
-        <div class="footer-nav-col stagger-item reveal-up">
-          <span class="footer-col-title">NAVIGATION</span>
-          <ul class="footer-link-list">
-            <li><a href="#hero" class="footer-link">Home</a></li>
-            <li><a href="#services" class="footer-link">Services</a></li>
-            <li><a href="#work" class="footer-link">Our Work</a></li>
-            <li><a href="#about" class="footer-link">About Studio</a></li>
-            <li><a href="#process" class="footer-link">How We Work</a></li>
-            <li><a href="#contact" class="footer-link">Let's Talk</a></li>
-          </ul>
-        </div>
-
-        <!-- Services -->
-        <div class="footer-nav-col stagger-item reveal-up">
-          <span class="footer-col-title">EXPERTISE</span>
-          <ul class="footer-link-list">
-            <li><a href="#services" class="footer-link">01 &mdash; Content Creation</a></li>
-            <li><a href="#services" class="footer-link">02 &mdash; Social Management</a></li>
-            <li><a href="#services" class="footer-link">03 &mdash; Creative Strategy</a></li>
-            <li><a href="#services" class="footer-link">04 &mdash; Digital Campaigns</a></li>
-            <li><a href="#work" class="footer-link">Lookbook Production</a></li>
-            <li><a href="#work" class="footer-link">TikTok &amp; Reels 9:16</a></li>
-          </ul>
-        </div>
-
-        <!-- Contact & Location -->
-        <div class="footer-nav-col stagger-item reveal-up">
-          <span class="footer-col-title">STUDIO HQ</span>
-          <address class="footer-address">
-            Bredgade 42<br>
-            1260 K&oslash;benhavn K<br>
-            Denmark
-          </address>
-          <div class="footer-email-box">
-            <span class="footer-col-title">INQUIRIES</span>
-            <a href="mailto:hello@studiosocialagency.com" class="footer-email-link">hello@studiosocialagency.com</a>
-          </div>
-          <div class="footer-social-box">
-            <span class="footer-col-title">FOLLOW</span>
-            <div class="footer-social-links">
-              <a href="https://instagram.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Instagram">IG</a>
-              <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="TikTok">TT</a>
-              <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="LinkedIn">LI</a>
-              <a href="https://pinterest.com" target="_blank" rel="noopener noreferrer" class="social-icon-link" aria-label="Pinterest">PI</a>
+        <div class="footer-columns-grid">
+          
+          <!-- Col 1: Brand Info -->
+          <div class="footer-col footer-col-brand">
+            <div class="footer-logo-lockup">
+              <span class="logo-lucci">LUCCI</span>
+              <span class="logo-media">MEDIA</span>
+            </div>
+            <p class="footer-brand-statement">
+              we turn beauty + wellness brands into booked-out businesses.
+            </p>
+            <div class="footer-boston-clock">
+              <span class="clock-dot" aria-hidden="true"></span>
+              <span class="clock-label">BOSTON HQ:</span>
+              <span class="clock-time" id="bostonClock">12:00:00 PM EST</span>
             </div>
           </div>
+
+          <!-- Col 2: Navigation -->
+          <div class="footer-col">
+            <h4 class="footer-heading">NAVIGATION</h4>
+            <ul class="footer-links-list">
+              <li><a href="#hero">Home</a></li>
+              <li><a href="#services">Services (.01 &ndash; .04)</a></li>
+              <li><a href="#path-picker">Where You Are</a></li>
+              <li><a href="#work">Client Work</a></li>
+              <li><a href="#about">About Lucci</a></li>
+              <li><a href="#contact">Apply</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 3: Services -->
+          <div class="footer-col">
+            <h4 class="footer-heading">CAPABILITIES</h4>
+            <ul class="footer-links-list">
+              <li><a href="#services">Social Media Management</a></li>
+              <li><a href="#services">Trending Socials Retainer</a></li>
+              <li><a href="#services">Brand Photography</a></li>
+              <li><a href="#services">Treatment Campaigns</a></li>
+              <li><a href="#contact">Strategy Consultation</a></li>
+            </ul>
+          </div>
+
+          <!-- Col 4: Connect & HQ -->
+          <div class="footer-col">
+            <h4 class="footer-heading">CONNECT</h4>
+            <ul class="footer-links-list">
+              <li><a href="https://instagram.com/luccimedia" target="_blank" rel="noopener noreferrer">Instagram (@luccimedia)</a></li>
+              <li><a href="mailto:hello@luccimedia.com">hello@luccimedia.com</a></li>
+              <li><a href="#contact">Back Bay &middot; Boston, MA</a></li>
+              <li><a href="#contact">New England &middot; Global Travel</a></li>
+            </ul>
+          </div>
+
+        </div>
+
+        <!-- Footer Bottom Bar -->
+        <div class="footer-bottom-bar">
+          <div class="footer-legal-copy">
+            &copy; <span id="currentYear">2027</span> LUCCI MEDIA &middot; BOSTON BEAUTY &amp; WELLNESS AGENCY. ALL RIGHTS RESERVED.
+          </div>
+          <div class="footer-legal-links">
+            <a href="#" class="legal-link" id="privacyLink">Privacy Policy</a>
+            <span class="legal-divider">&bull;</span>
+            <a href="#" class="legal-link" id="termsLink">Terms of Service</a>
+            <span class="legal-divider">&bull;</span>
+            <a href="#" class="legal-link" id="creditsLink">Brand Kit &amp; Tokens</a>
+          </div>
+          <button type="button" class="back-to-top-btn" id="backToTopBtn" aria-label="Scroll back to top">
+            <span>Back to Top &uarr;</span>
+          </button>
         </div>
 
       </div>
-
-      <!-- Footer Bottom Bar -->
-      <div class="footer-bottom-bar reveal-up">
-        <p class="footer-copyright">
-          &copy; <span id="currentYear">2026</span> STUDIO SOCIAL. ALL RIGHTS RESERVED.
-        </p>
-
-        <div class="footer-legal-links">
-          <a href="#" class="legal-link" id="privacyLink">Privacy Policy</a>
-          <span class="legal-divider">&bull;</span>
-          <a href="#" class="legal-link" id="termsLink">Terms of Service</a>
-          <span class="legal-divider">&bull;</span>
-          <a href="#" class="legal-link" id="creditsLink">Site Credits</a>
-        </div>
-
-        <button type="button" class="back-to-top-btn" id="backToTopBtn" aria-label="Scroll back to top">
-          <span>BACK TO TOP</span>
-          <span class="top-arrow">&uarr;</span>
-        </button>
-      </div>
-
     </div>
+
+    <!-- Giant Footer Watermark Marquee -->
+    <div class="footer-giant-marquee" aria-hidden="true">
+      <span>LUCCI MEDIA &middot; THE BRAND THAT BUILDS THE BRANDS &middot; </span>
+    </div>
+
   </footer>
 
   <!-- ==============================================
-       MODAL: CASE STUDY QUICK-VIEW (Accessible Dialog)
+       12. ACCESSIBLE CASE STUDY MODAL DIALOG
        ============================================== -->
   <div class="case-study-modal" id="caseStudyModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle" aria-hidden="true">
     <div class="modal-backdrop" id="modalBackdrop"></div>
-    <div class="modal-container">
+    <div class="modal-dialog">
       <button type="button" class="modal-close-btn" id="modalCloseBtn" aria-label="Close dialog">&times;</button>
       <div class="modal-content" id="modalBody">
-        <!-- Injected via JavaScript -->
+        <!-- Dynamic case study content injected by script.js -->
       </div>
     </div>
   </div>
 
-  <!-- Toast Notification Container -->
+  <!-- Toast Notification -->
   <div class="toast-notification" id="toastNotice" role="status" aria-live="polite"></div>
 
-  <!-- Vanilla JavaScript -->
-  <script src="script.js" defer></script>
+  <!-- Scripts -->
+  <script src="script.js"></script>
 </body>
 </html>
