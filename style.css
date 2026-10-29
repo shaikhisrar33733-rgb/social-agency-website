@@ -2588,22 +2588,200 @@ ul, ol {
 }
 
 /* --------------------------------------------------------------------------
-   18. SCROLL REVEAL ANIMATIONS
+   18. SCROLL & ENTRANCE ANIMATIONS (PREMIUM AGENCY MOTION SYSTEM)
    -------------------------------------------------------------------------- */
-.reveal-item {
+:root {
+  --ease-luxury: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-soft: cubic-bezier(0.22, 1, 0.36, 1);
+  --duration-reveal: 0.85s;
+  --duration-reveal-fast: 0.6s;
+}
+
+/* Progressive Enhancement:
+   If JS fails or is blocked, elements remain 100% visible by default.
+   Initial hidden and translated states only apply when .js-anim-ready is present. */
+.js-anim-ready .reveal,
+.js-anim-ready .reveal-up,
+.js-anim-ready .reveal-item {
   opacity: 0;
   transform: translateY(28px);
-  transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+  transition: opacity var(--duration-reveal) var(--ease-luxury), transform var(--duration-reveal) var(--ease-luxury);
   will-change: opacity, transform;
 }
 
-.reveal-item.revealed {
+.js-anim-ready .reveal-left {
+  opacity: 0;
+  transform: translateX(-28px);
+  transition: opacity var(--duration-reveal) var(--ease-luxury), transform var(--duration-reveal) var(--ease-luxury);
+  will-change: opacity, transform;
+}
+
+.js-anim-ready .reveal-right {
+  opacity: 0;
+  transform: translateX(28px);
+  transition: opacity var(--duration-reveal) var(--ease-luxury), transform var(--duration-reveal) var(--ease-luxury);
+  will-change: opacity, transform;
+}
+
+.js-anim-ready .reveal-scale {
+  opacity: 0;
+  transform: scale(0.96) translateY(24px);
+  transition: opacity var(--duration-reveal) var(--ease-luxury), transform var(--duration-reveal) var(--ease-luxury);
+  will-change: opacity, transform;
+}
+
+/* Active / In-View State (Triggered on Scroll Down and Re-Triggered on Scroll Up) */
+.js-anim-ready .reveal.revealed,
+.js-anim-ready .reveal-up.revealed,
+.js-anim-ready .reveal-left.revealed,
+.js-anim-ready .reveal-right.revealed,
+.js-anim-ready .reveal-scale.revealed,
+.js-anim-ready .reveal-item.revealed {
   opacity: 1;
-  transform: translateY(0);
+  transform: translate(0, 0) scale(1);
 }
 
 /* --------------------------------------------------------------------------
-   19. REDUCED MOTION PREFERENCE
+   EDITORIAL HEADLINE TEXT REVEAL (Hero & Major Headings)
+   -------------------------------------------------------------------------- */
+.heading-line-wrap {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.06em;
+}
+
+.js-anim-ready .heading-line {
+  display: block;
+  transform: translateY(115%);
+  opacity: 0;
+  transition: transform 0.95s var(--ease-luxury), opacity 0.8s ease;
+  will-change: transform, opacity;
+}
+
+.js-anim-ready .hero-heading.revealed .heading-line,
+.js-anim-ready .hero-heading.hero-loaded .heading-line {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+.hero-heading .heading-line-wrap:nth-child(1) .heading-line {
+  transition-delay: 0.16s;
+}
+
+.hero-heading .heading-line-wrap:nth-child(2) .heading-line {
+  transition-delay: 0.32s;
+}
+
+.hero-heading .heading-line-wrap:nth-child(3) .heading-line {
+  transition-delay: 0.48s;
+}
+
+/* Initial Hero Stagger Delays on Page Load */
+.js-anim-ready .hero-anim-1 { transition-delay: 0.08s; }
+.js-anim-ready .hero-anim-2 { transition-delay: 0.15s; }
+.js-anim-ready .hero-anim-3 { transition-delay: 0.62s; }
+.js-anim-ready .hero-anim-4 { transition-delay: 0.76s; }
+.js-anim-ready .hero-anim-5 { transition-delay: 0.90s; }
+
+.js-anim-ready .hero-anim-collage-1 { transition-delay: 0.28s; }
+.js-anim-ready .hero-anim-collage-2 { transition-delay: 0.44s; }
+.js-anim-ready .hero-anim-collage-3 { transition-delay: 0.58s; }
+.js-anim-ready .hero-anim-collage-4 { transition-delay: 0.72s; }
+.js-anim-ready .hero-anim-collage-5 { transition-delay: 0.86s; }
+
+/* --------------------------------------------------------------------------
+   STAGGER SEQUENCING FOR CARDS & GRIDS
+   -------------------------------------------------------------------------- */
+.stagger-group .stagger-item:nth-child(1) { transition-delay: 0.05s; }
+.stagger-group .stagger-item:nth-child(2) { transition-delay: 0.15s; }
+.stagger-group .stagger-item:nth-child(3) { transition-delay: 0.25s; }
+.stagger-group .stagger-item:nth-child(4) { transition-delay: 0.35s; }
+.stagger-group .stagger-item:nth-child(5) { transition-delay: 0.45s; }
+.stagger-group .stagger-item:nth-child(6) { transition-delay: 0.55s; }
+.stagger-group .stagger-item:nth-child(7) { transition-delay: 0.65s; }
+.stagger-group .stagger-item:nth-child(8) { transition-delay: 0.75s; }
+
+/* Dynamic inline override support if set via script */
+.stagger-item[style*="--stagger-delay"] {
+  transition-delay: var(--stagger-delay) !important;
+}
+
+/* --------------------------------------------------------------------------
+   IMAGE HOVER & SCALE STYLING (Zero Layout Shifts)
+   -------------------------------------------------------------------------- */
+.portfolio-img-box {
+  overflow: hidden;
+  position: relative;
+}
+
+.portfolio-img {
+  transition: transform 0.75s var(--ease-luxury), filter 0.45s ease;
+  will-change: transform;
+}
+
+.portfolio-card:hover .portfolio-img {
+  transform: scale(1.06);
+}
+
+.service-visual-preview {
+  overflow: hidden;
+}
+
+.service-img {
+  transition: transform 0.85s var(--ease-luxury);
+  will-change: transform;
+}
+
+.service-block:hover .service-img {
+  transform: scale(1.08);
+}
+
+.process-image-card {
+  overflow: hidden;
+}
+
+.process-thumb {
+  transition: transform 0.75s var(--ease-luxury);
+  will-change: transform;
+}
+
+.process-card:hover .process-thumb {
+  transform: scale(1.08);
+}
+
+/* --------------------------------------------------------------------------
+   MOBILE RESPONSIVENESS FOR ANIMATIONS
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .js-anim-ready .reveal,
+  .js-anim-ready .reveal-up,
+  .js-anim-ready .reveal-item {
+    transform: translateY(16px);
+    transition-duration: 0.65s;
+  }
+
+  .js-anim-ready .reveal-left {
+    transform: translateX(-16px);
+    transition-duration: 0.65s;
+  }
+
+  .js-anim-ready .reveal-right {
+    transform: translateX(16px);
+    transition-duration: 0.65s;
+  }
+
+  .js-anim-ready .reveal-scale {
+    transform: scale(0.97) translateY(14px);
+    transition-duration: 0.65s;
+  }
+
+  .stagger-group .stagger-item:nth-child(n) {
+    transition-delay: 0.08s;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   19. REDUCED MOTION PREFERENCE (Accessibility)
    -------------------------------------------------------------------------- */
 @media (prefers-reduced-motion: reduce) {
   *, *::before, *::after {
@@ -2617,9 +2795,17 @@ ul, ol {
     animation: none !important;
   }
 
-  .reveal-item {
+  .heading-line,
+  .reveal,
+  .reveal-up,
+  .reveal-left,
+  .reveal-right,
+  .reveal-scale,
+  .reveal-item,
+  .stagger-item {
     opacity: 1 !important;
     transform: none !important;
+    transition: none !important;
   }
 }
 

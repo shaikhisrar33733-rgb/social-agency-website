@@ -6,6 +6,9 @@
   <title>STUDIO SOCIAL — Creative Agency & Social-First Production</title>
   <meta name="description" content="We create scroll-stopping content and social-first experiences that make brands impossible to ignore. Editorial creative production, fashion, beauty, and digital strategy.">
   
+  <!-- Progressive Enhancement: Flag JS animation readiness instantly to prevent layout jump or FOUC -->
+  <script>document.documentElement.classList.add('js-anim-ready');</script>
+
   <!-- Favicon (SVG data URI for instant crisp luxury icon) -->
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%23141312'/><text x='50%' y='55%' dominant-baseline='middle' text-anchor='middle' font-family='serif' font-size='56' fill='%23F8F5EE' font-weight='bold'>S</text></svg>">
 
@@ -103,24 +106,24 @@
         <!-- Hero Header & Typography Block -->
         <div class="hero-text-block">
           
-          <div class="hero-meta-badge reveal-item">
+          <div class="hero-meta-badge reveal-up hero-anim-1">
             <span class="badge-tag">SOCIAL-FIRST CREATIVE DIRECTION</span>
             <span class="badge-separator">&bull;</span>
             <span class="badge-year">EDITION 2026</span>
           </div>
 
-          <h1 class="hero-heading reveal-item" id="hero-heading">
-            <span class="heading-line">GOOD CONTENT.</span>
-            <span class="heading-line">GREAT ENERGY.</span>
-            <span class="heading-line highlight-line">REAL IMPACT.</span>
+          <h1 class="hero-heading reveal-text hero-anim-2" id="hero-heading">
+            <span class="heading-line-wrap"><span class="heading-line">GOOD CONTENT.</span></span>
+            <span class="heading-line-wrap"><span class="heading-line">GREAT ENERGY.</span></span>
+            <span class="heading-line-wrap"><span class="heading-line highlight-line">REAL IMPACT.</span></span>
           </h1>
 
-          <p class="hero-support-text reveal-item">
+          <p class="hero-support-text reveal-up hero-anim-3">
             &ldquo;We create scroll-stopping content and social-first experiences that make brands impossible to ignore.&rdquo;
           </p>
 
           <!-- Hero CTAs -->
-          <div class="hero-cta-group reveal-item">
+          <div class="hero-cta-group reveal-up hero-anim-4">
             <a href="#work" class="btn btn-primary hero-btn">
               <span>Explore Our Work</span>
               <span class="btn-icon-down" aria-hidden="true">&darr;</span>
@@ -132,7 +135,7 @@
           </div>
 
           <!-- Small Hero Footer Editorial Metrics -->
-          <div class="hero-stats-strip reveal-item">
+          <div class="hero-stats-strip reveal-up hero-anim-5">
             <div class="hero-stat-pill">
               <span class="stat-num">48M+</span>
               <span class="stat-desc">Organic Impressions</span>
@@ -155,7 +158,7 @@
         <div class="hero-visual-collage" aria-label="Studio visual showcase">
           
           <!-- Collage Frame 1: Vertical 9:16 Social Frame (Main) -->
-          <figure class="collage-item collage-card-tall reveal-item" data-speed="1.05">
+          <figure class="collage-item collage-card-tall reveal-scale hero-anim-collage-1" data-speed="1.05">
             <div class="card-inner">
               <img src="assets/images/hero-fashion.jpg" alt="Editorial fashion campaign model in modern oversized coat" class="collage-img" fetchpriority="high">
               <div class="editorial-overlay-tag top-left">
@@ -170,7 +173,7 @@
           </figure>
 
           <!-- Collage Frame 2: Dewy Beauty Card -->
-          <figure class="collage-item collage-card-square reveal-item" data-speed="1.1">
+          <figure class="collage-item collage-card-square reveal-right hero-anim-collage-2" data-speed="1.1">
             <div class="card-inner">
               <img src="assets/images/hero-beauty.jpg" alt="Dewy luminous skin clean beauty close-up" class="collage-img" fetchpriority="high">
               <div class="editorial-overlay-pill">
@@ -181,7 +184,7 @@
           </figure>
 
           <!-- Collage Frame 3: Lifestyle / Behind-The-Scenes -->
-          <figure class="collage-item collage-card-offset reveal-item" data-speed="0.95">
+          <figure class="collage-item collage-card-offset reveal-left hero-anim-collage-3" data-speed="0.95">
             <div class="card-inner">
               <img src="assets/images/hero-social.jpg" alt="Creative portrait on studio set" class="collage-img" fetchpriority="high">
               <div class="floating-metric-card">
@@ -193,7 +196,7 @@
           </figure>
 
           <!-- Collage Frame 4: Design & Product Still -->
-          <figure class="collage-item collage-card-small reveal-item" data-speed="1.15">
+          <figure class="collage-item collage-card-small reveal-scale hero-anim-collage-4" data-speed="1.15">
             <div class="card-inner">
               <img src="assets/images/hero-product.jpg" alt="Sculptural luxury perfume bottle with warm shadows" class="collage-img" fetchpriority="high">
             </div>
@@ -201,7 +204,7 @@
           </figure>
 
           <!-- Floating Rotating Emblem / Stamp -->
-          <div class="hero-stamp" aria-hidden="true">
+          <div class="hero-stamp reveal-scale hero-anim-collage-5" aria-hidden="true">
             <svg viewBox="0 0 100 100" class="rotating-text-svg">
               <path id="circlePath" d="M 50, 50 m -37, 0 a 37,37 0 1,1 74,0 a 37,37 0 1,1 -74,0" fill="none"/>
               <text font-size="10.8" letter-spacing="2.2" fill="#141312" font-weight="600">
@@ -221,7 +224,7 @@
     <!-- ==============================================
          CREATIVE MARQUEE TICKER (Section 9)
          ============================================== -->
-    <section class="marquee-strip" aria-label="Agency Mantra Ticker">
+    <section class="marquee-strip reveal" aria-label="Agency Mantra Ticker">
       <div class="marquee-track">
         <div class="marquee-group">
           <span class="marquee-item">GOOD PEOPLE. GOOD IDEAS. GREAT CONTENT.</span>
@@ -250,11 +253,11 @@
       <div class="container">
         
         <div class="intro-header-row">
-          <div class="section-label-pill reveal-item">
+          <div class="section-label-pill reveal-up">
             <span class="label-dot"></span>
             <span>01 / ABOUT OUR PHILOSOPHY</span>
           </div>
-          <div class="intro-geo-tag reveal-item">
+          <div class="intro-geo-tag reveal-up">
             <span>BASED IN COPENHAGEN &bull; WORKING GLOBALLY</span>
           </div>
         </div>
@@ -263,17 +266,17 @@
           
           <!-- Expressive Typography Column -->
           <div class="intro-statement-col">
-            <h2 class="intro-heading reveal-item" id="intro-heading">
+            <h2 class="intro-heading reveal-up" id="intro-heading">
               &ldquo;WE MAKE BRANDS <br>
               FEEL LIKE <span class="editorial-italic">SOMETHING</span>.&rdquo;
             </h2>
 
-            <p class="intro-support-copy reveal-item">
+            <p class="intro-support-copy reveal-up">
               &ldquo;From the first idea to the final edit, we bring strategy, storytelling and creative production together to help brands show up with confidence.&rdquo;
             </p>
 
-            <div class="intro-pillars-list reveal-item">
-              <div class="pillar-row">
+            <div class="intro-pillars-list stagger-group reveal-up">
+              <div class="pillar-row stagger-item">
                 <span class="pillar-idx">[ 01 ]</span>
                 <div class="pillar-body">
                   <h3 class="pillar-title">Editorial Sensibility</h3>
@@ -281,7 +284,7 @@
                 </div>
               </div>
 
-              <div class="pillar-row">
+              <div class="pillar-row stagger-item">
                 <span class="pillar-idx">[ 02 ]</span>
                 <div class="pillar-body">
                   <h3 class="pillar-title">Social-Native Strategy</h3>
@@ -289,7 +292,7 @@
                 </div>
               </div>
 
-              <div class="pillar-row">
+              <div class="pillar-row stagger-item">
                 <span class="pillar-idx">[ 03 ]</span>
                 <div class="pillar-body">
                   <h3 class="pillar-title">Holistic Production</h3>
@@ -302,7 +305,7 @@
 
           <!-- Studio Moodboard & Visual Column -->
           <div class="intro-visual-col">
-            <div class="intro-image-wrapper reveal-item">
+            <div class="intro-image-wrapper reveal-scale">
               <img src="assets/images/brand-studio.jpg" alt="Studio Social creative direction studio and aesthetic moodboard" class="intro-image" loading="lazy">
               <div class="intro-image-badge">
                 <span class="badge-title">THE STUDIO MANIFESTO</span>
@@ -311,14 +314,14 @@
             </div>
 
             <!-- Quantitative Impact Cards -->
-            <div class="intro-metrics-grid reveal-item">
-              <div class="intro-metric-card">
+            <div class="intro-metrics-grid stagger-group reveal-up">
+              <div class="intro-metric-card stagger-item">
                 <span class="metric-counter" data-target="120">120+</span>
                 <span class="metric-title">Campaigns Directed</span>
                 <p class="metric-sub">Across fashion, luxury skincare, design &amp; lifestyle.</p>
               </div>
 
-              <div class="intro-metric-card">
+              <div class="intro-metric-card stagger-item">
                 <span class="metric-counter" data-target="4.8">4.8x</span>
                 <span class="metric-title">Average Engagement</span>
                 <p class="metric-sub">Higher than platform and industry benchmarks.</p>
@@ -339,23 +342,23 @@
       <div class="container">
         
         <div class="section-header-block">
-          <div class="section-label-pill reveal-item">
+          <div class="section-label-pill reveal-up">
             <span class="label-dot"></span>
             <span>02 / OUR EXPERTISE</span>
           </div>
           <div class="section-title-wrap">
-            <h2 class="section-title reveal-item" id="services-heading">SERVICES &amp; CAPABILITIES</h2>
-            <p class="section-subtitle reveal-item">
+            <h2 class="section-title reveal-up" id="services-heading">SERVICES &amp; CAPABILITIES</h2>
+            <p class="section-subtitle reveal-up">
               Elevated, end-to-end creative solutions designed specifically for ambitious brands ready to command social culture.
             </p>
           </div>
         </div>
 
         <!-- 4 Distinctive Editorial Service Blocks -->
-        <div class="services-editorial-list">
+        <div class="services-editorial-list stagger-group">
 
           <!-- 01 — Content Creation -->
-          <article class="service-block reveal-item" data-service="1">
+          <article class="service-block stagger-item reveal-up" data-service="1">
             <div class="service-header-row">
               <div class="service-num-wrap">
                 <span class="service-num">01</span>
@@ -391,7 +394,7 @@
           </article>
 
           <!-- 02 — Social Media Management -->
-          <article class="service-block reveal-item" data-service="2">
+          <article class="service-block stagger-item reveal-up" data-service="2">
             <div class="service-header-row">
               <div class="service-num-wrap">
                 <span class="service-num">02</span>
@@ -427,7 +430,7 @@
           </article>
 
           <!-- 03 — Creative Strategy -->
-          <article class="service-block reveal-item" data-service="3">
+          <article class="service-block stagger-item reveal-up" data-service="3">
             <div class="service-header-row">
               <div class="service-num-wrap">
                 <span class="service-num">03</span>
@@ -463,7 +466,7 @@
           </article>
 
           <!-- 04 — Digital Campaigns -->
-          <article class="service-block reveal-item" data-service="4">
+          <article class="service-block stagger-item reveal-up" data-service="4">
             <div class="service-header-row">
               <div class="service-num-wrap">
                 <span class="service-num">04</span>
@@ -510,21 +513,21 @@
       <div class="container">
         
         <div class="work-header-wrap">
-          <div class="section-label-pill reveal-item">
+          <div class="section-label-pill reveal-up">
             <span class="label-dot"></span>
             <span>03 / SELECTED WORKS</span>
           </div>
           
           <div class="work-title-flex">
             <div>
-              <h2 class="section-title reveal-item" id="work-heading">MADE TO BE SEEN.</h2>
-              <p class="section-subtitle reveal-item">
+              <h2 class="section-title reveal-up" id="work-heading">MADE TO BE SEEN.</h2>
+              <p class="section-subtitle reveal-up">
                 &ldquo;A little look at what happens when good ideas meet great execution.&rdquo;
               </p>
             </div>
 
             <!-- Portfolio Category Filter Tabs -->
-            <div class="portfolio-filter-group reveal-item" role="tablist" aria-label="Portfolio Category Filter">
+            <div class="portfolio-filter-group reveal-up" role="tablist" aria-label="Portfolio Category Filter">
               <button type="button" class="filter-btn active" role="tab" aria-selected="true" data-filter="all">All Work</button>
               <button type="button" class="filter-btn" role="tab" aria-selected="false" data-filter="beauty">Beauty</button>
               <button type="button" class="filter-btn" role="tab" aria-selected="false" data-filter="fashion">Fashion</button>
@@ -535,10 +538,10 @@
         </div>
 
         <!-- Asymmetrical Editorial Portfolio Grid -->
-        <div class="portfolio-grid" id="portfolioGrid">
+        <div class="portfolio-grid stagger-group" id="portfolioGrid">
 
           <!-- Project 01: Beauty Campaigns -->
-          <article class="portfolio-item item-large reveal-item" data-category="beauty" data-index="1">
+          <article class="portfolio-item item-large stagger-item reveal-scale" data-category="beauty" data-index="1">
             <div class="portfolio-card">
               <div class="portfolio-img-box">
                 <img src="assets/images/work-skincare.jpg" alt="Lumen Skincare - Clean Light Campaign" class="portfolio-img" loading="lazy">
@@ -561,7 +564,7 @@
           </article>
 
           <!-- Project 02: Fashion & Lifestyle -->
-          <article class="portfolio-item item-medium reveal-item" data-category="fashion" data-index="2">
+          <article class="portfolio-item item-medium stagger-item reveal-scale" data-category="fashion" data-index="2">
             <div class="portfolio-card">
               <div class="portfolio-img-box">
                 <img src="assets/images/work-fashion.jpg" alt="Maison Nord Copenhagen SS26 Fashion Run" class="portfolio-img" loading="lazy">
@@ -584,7 +587,7 @@
           </article>
 
           <!-- Project 03: Product Photography -->
-          <article class="portfolio-item item-medium reveal-item" data-category="product" data-index="3">
+          <article class="portfolio-item item-medium stagger-item reveal-scale" data-category="product" data-index="3">
             <div class="portfolio-card">
               <div class="portfolio-img-box">
                 <img src="assets/images/work-botanical.jpg" alt="Aura Botanicals Zero-Proof Elixirs" class="portfolio-img" loading="lazy">
@@ -607,7 +610,7 @@
           </article>
 
           <!-- Project 04: Social Media Campaigns -->
-          <article class="portfolio-item item-tall reveal-item" data-category="social" data-index="4">
+          <article class="portfolio-item item-tall stagger-item reveal-scale" data-category="social" data-index="4">
             <div class="portfolio-card">
               <div class="portfolio-img-box">
                 <img src="assets/images/work-social.jpg" alt="Velvet Archive Viral TikTok Launch" class="portfolio-img" loading="lazy">
@@ -630,7 +633,7 @@
           </article>
 
           <!-- Project 05: Creative Brand Visuals -->
-          <article class="portfolio-item item-medium reveal-item" data-category="product" data-index="5">
+          <article class="portfolio-item item-medium stagger-item reveal-scale" data-category="product" data-index="5">
             <div class="portfolio-card">
               <div class="portfolio-img-box">
                 <img src="assets/images/work-ceramics.jpg" alt="Køben Ceramics Form & Tactility" class="portfolio-img" loading="lazy">
@@ -653,7 +656,7 @@
           </article>
 
           <!-- Project 06: Luxury Campaign -->
-          <article class="portfolio-item item-large reveal-item" data-category="beauty" data-index="6">
+          <article class="portfolio-item item-large stagger-item reveal-scale" data-category="beauty" data-index="6">
             <div class="portfolio-card">
               <div class="portfolio-img-box">
                 <img src="assets/images/work-parfum.jpg" alt="Séance Parfum Scent of Silence" class="portfolio-img" loading="lazy">
@@ -678,7 +681,7 @@
         </div>
 
         <!-- Functional VIEW ALL WORK Destination / Expansion Block -->
-        <div class="work-footer-cta reveal-item">
+        <div class="work-footer-cta reveal-up">
           <button type="button" class="btn btn-outline btn-all-work" id="viewAllWorkBtn" aria-expanded="false" aria-controls="workArchiveDrawer">
             <span class="btn-text">VIEW ALL WORK</span>
             <span class="btn-count">(06 / 24 ARCHIVE)</span>
@@ -705,7 +708,7 @@
          ============================================== -->
     <section class="testimonial-section" aria-label="Client Words">
       <div class="container">
-        <div class="testimonial-box reveal-item">
+        <div class="testimonial-box reveal-scale">
           <div class="quote-mark" aria-hidden="true">&ldquo;</div>
           <blockquote class="testimonial-quote">
             STUDIO SOCIAL DOESN'T JUST MAKE CONTENT; THEY CREATE CULTURAL MOMENTUM. OUR SS26 LAUNCH WAS OUR HIGHEST-CONVERTING CAMPAIGN TO DATE.
@@ -720,15 +723,15 @@
         </div>
 
         <!-- Minimalist Brand Partner Logotypes -->
-        <div class="brand-partners-tape reveal-item" aria-label="Brand Partners">
+        <div class="brand-partners-tape reveal-up" aria-label="Brand Partners">
           <span class="partner-label">TRUSTED BY AMBITIOUS GLOBAL BRANDS:</span>
-          <div class="partners-grid">
-            <span class="partner-logo">LUMEN LABS</span>
-            <span class="partner-logo">MAISON NORD</span>
-            <span class="partner-logo">AURA COPENHAGEN</span>
-            <span class="partner-logo">VELVET ATELIER</span>
-            <span class="partner-logo">KØBEN STUDIO</span>
-            <span class="partner-logo">SÉANCE PARFUM</span>
+          <div class="partners-grid stagger-group">
+            <span class="partner-logo stagger-item">LUMEN LABS</span>
+            <span class="partner-logo stagger-item">MAISON NORD</span>
+            <span class="partner-logo stagger-item">AURA COPENHAGEN</span>
+            <span class="partner-logo stagger-item">VELVET ATELIER</span>
+            <span class="partner-logo stagger-item">KØBEN STUDIO</span>
+            <span class="partner-logo stagger-item">SÉANCE PARFUM</span>
           </div>
         </div>
       </div>
@@ -741,23 +744,23 @@
       <div class="container">
         
         <div class="section-header-block">
-          <div class="section-label-pill reveal-item">
+          <div class="section-label-pill reveal-up">
             <span class="label-dot"></span>
             <span>04 / OUR METHODOLOGY</span>
           </div>
           <div class="section-title-wrap">
-            <h2 class="section-title reveal-item" id="process-heading">HOW WE WORK</h2>
-            <p class="section-subtitle reveal-item">
+            <h2 class="section-title reveal-up" id="process-heading">HOW WE WORK</h2>
+            <p class="section-subtitle reveal-up">
               A disciplined, high-touch creative production pipeline from initial spark to sustained cultural resonance.
             </p>
           </div>
         </div>
 
         <!-- Three Elegant Process Steps -->
-        <div class="process-grid">
+        <div class="process-grid stagger-group">
 
           <!-- 01 — DISCOVER -->
-          <article class="process-card reveal-item">
+          <article class="process-card stagger-item reveal-up">
             <div class="process-top">
               <span class="process-step-num">01</span>
               <span class="process-phase-tag">PHASE 01 // AUDIT</span>
@@ -782,7 +785,7 @@
           </article>
 
           <!-- 02 — CREATE -->
-          <article class="process-card reveal-item">
+          <article class="process-card stagger-item reveal-up">
             <div class="process-top">
               <span class="process-step-num">02</span>
               <span class="process-phase-tag">PHASE 02 // PRODUCTION</span>
@@ -807,7 +810,7 @@
           </article>
 
           <!-- 03 — GROW -->
-          <article class="process-card reveal-item">
+          <article class="process-card stagger-item reveal-up">
             <div class="process-top">
               <span class="process-step-num">03</span>
               <span class="process-phase-tag">PHASE 03 // ELEVATION</span>
@@ -842,12 +845,12 @@
     <section class="final-cta-section" id="contact" aria-labelledby="cta-heading">
       <div class="container">
         
-        <div class="cta-card-wrapper reveal-item">
+        <div class="cta-card-wrapper reveal-scale">
           
           <div class="cta-inner-grid">
             
             <!-- Left Info Block -->
-            <div class="cta-text-side">
+            <div class="cta-text-side reveal-up">
               
               <div class="cta-label-pill">
                 <span class="live-rec-dot" aria-hidden="true"></span>
@@ -885,7 +888,7 @@
             </div>
 
             <!-- Right Interactive Inquiry Form -->
-            <div class="cta-form-side">
+            <div class="cta-form-side reveal-up">
               <form class="inquiry-form" id="inquiryForm" novalidate>
                 
                 <h3 class="form-title">START A PROJECT</h3>
@@ -954,10 +957,10 @@
     <div class="container">
       
       <!-- Footer Top Row -->
-      <div class="footer-top-grid">
+      <div class="footer-top-grid stagger-group">
         
         <!-- Brand Info -->
-        <div class="footer-brand-col">
+        <div class="footer-brand-col stagger-item reveal-up">
           <a href="#hero" class="footer-logo">STUDIO SOCIAL</a>
           <p class="footer-statement">
             We bridge the gap between high-fashion editorial aesthetics and high-retention social performance. Based in Copenhagen, working with visionary brands worldwide.
@@ -969,7 +972,7 @@
         </div>
 
         <!-- Navigation Links -->
-        <div class="footer-nav-col">
+        <div class="footer-nav-col stagger-item reveal-up">
           <span class="footer-col-title">NAVIGATION</span>
           <ul class="footer-link-list">
             <li><a href="#hero" class="footer-link">Home</a></li>
@@ -982,7 +985,7 @@
         </div>
 
         <!-- Services -->
-        <div class="footer-nav-col">
+        <div class="footer-nav-col stagger-item reveal-up">
           <span class="footer-col-title">EXPERTISE</span>
           <ul class="footer-link-list">
             <li><a href="#services" class="footer-link">01 &mdash; Content Creation</a></li>
@@ -995,7 +998,7 @@
         </div>
 
         <!-- Contact & Location -->
-        <div class="footer-nav-col">
+        <div class="footer-nav-col stagger-item reveal-up">
           <span class="footer-col-title">STUDIO HQ</span>
           <address class="footer-address">
             Bredgade 42<br>
@@ -1020,7 +1023,7 @@
       </div>
 
       <!-- Footer Bottom Bar -->
-      <div class="footer-bottom-bar">
+      <div class="footer-bottom-bar reveal-up">
         <p class="footer-copyright">
           &copy; <span id="currentYear">2026</span> STUDIO SOCIAL. ALL RIGHTS RESERVED.
         </p>

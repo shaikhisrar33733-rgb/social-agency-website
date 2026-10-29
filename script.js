@@ -171,31 +171,86 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
-  // 4. INTERSECTION OBSERVER FOR SCROLL REVEAL ANIMATIONS
+  // 4. INTERSECTION OBSERVER FOR SCROLL REVEAL ANIMATIONS (BI-DIRECTIONAL)
   // ==========================================================================
-  const revealElements = document.querySelectorAll('.reveal-item');
+  document.documentElement.classList.add('js-anim-ready');
+
+  const revealSelector = '.reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-item, .reveal-text';
+  const revealElements = document.querySelectorAll(revealSelector);
 
   // Check if reduced motion is preferred
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Initial Hero Entrance Trigger (on page load)
+  const triggerHeroAnimation = () => {
+    const heroElements = document.querySelectorAll('#hero .reveal, #hero .reveal-up, #hero .reveal-left, #hero .reveal-right, #hero .reveal-scale, #hero .reveal-item, #hero .reveal-text');
+    heroElements.forEach(el => {
+      el.classList.add('revealed');
+    });
+    const heroHeading = document.getElementById('hero-heading');
+    if (heroHeading) {
+      heroHeading.classList.add('hero-loaded', 'revealed');
+    }
+  };
+
   if (!prefersReducedMotion && 'IntersectionObserver' in window) {
-    const revealObserver = new IntersectionObserver((entries, observer) => {
+    // Bi-directional observer: reveals on scroll down, and re-reveals when scrolling back up
+    const observerOptions = {
+      root: null,
+      rootMargin: '0px 0px -40px 0px',
+      threshold: [0, 0.15]
+    };
+
+    const revealObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
+        const target = entry.target;
+        const rect = entry.boundingClientRect;
+        const viewportHeight = window.innerHeight || document.documentElement.clientHeight;
+
         if (entry.isIntersecting) {
-          entry.target.classList.add('revealed');
-          observer.unobserve(entry.target);
+          target.classList.add('revealed');
+        } else {
+          // Check if element has scrolled substantially outside the viewport
+          const isOffscreenBottom = rect.top > viewportHeight + 40;
+          const isOffscreenTop = rect.bottom < -40;
+
+          // Don't un-reveal hero elements if user is near the very top of page
+          const isInsideHero = target.closest('#hero');
+          if (isInsideHero && window.scrollY < 180) {
+            return;
+          }
+
+          // If scrolled out of view either upwards or downwards, remove .revealed
+          // so scrolling back in smoothly triggers the animation again
+          if (isOffscreenBottom || isOffscreenTop) {
+            target.classList.remove('revealed');
+          }
         }
       });
-    }, {
-      root: null,
-      rootMargin: '0px 0px -60px 0px',
-      threshold: 0.12
-    });
+    }, observerOptions);
 
     revealElements.forEach(el => revealObserver.observe(el));
+
+    // Stagger group dynamic delay initialization for cards and lists
+    const staggerGroups = document.querySelectorAll('.stagger-group');
+    staggerGroups.forEach(group => {
+      const items = group.querySelectorAll('.stagger-item');
+      items.forEach((item, idx) => {
+        if (!item.style.getPropertyValue('--stagger-delay')) {
+          item.style.setProperty('--stagger-delay', `${(idx * 0.1) + 0.05}s`);
+        }
+      });
+    });
+
+    // Run hero entrance smoothly after DOM paint
+    requestAnimationFrame(() => {
+      setTimeout(triggerHeroAnimation, 60);
+    });
   } else {
-    // Fallback: reveal immediately
+    // Fallback: reveal immediately for reduced motion or unsupported environments
     revealElements.forEach(el => el.classList.add('revealed'));
+    const heroHeading = document.getElementById('hero-heading');
+    if (heroHeading) heroHeading.classList.add('hero-loaded', 'revealed');
   }
 
   // Active desktop nav link on scroll
@@ -252,6 +307,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const itemCategory = item.getAttribute('data-category');
           if (filterValue === 'all' || itemCategory === filterValue) {
             item.classList.remove('filtered-out');
+            item.classList.add('revealed');
           } else {
             item.classList.add('filtered-out');
           }
