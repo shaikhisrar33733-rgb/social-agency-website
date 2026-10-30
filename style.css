@@ -46,7 +46,7 @@
   --text-h2: clamp(26px, 3.8vw, 36px);
   --text-h1: clamp(32px, 5vw, 48px);
   --text-display: clamp(38px, 6vw, 60px);
-  --text-hero: clamp(38px, 6.2vw, 76px);
+  --text-hero: clamp(34px, 3.8vw, 50px);
 
   /* Shadows (Tactile & Curled Paper) */
   --lm-shadow-subtle: 0 4px 18px rgba(35, 31, 32, 0.05);
@@ -795,20 +795,28 @@ h1, h2, h3, h4 {
 .mobile-toggle {
   display: none;
   flex-direction: column;
-  justify-content: space-between;
-  width: 28px;
-  height: 18px;
-  padding: 0;
+  justify-content: center;
+  align-items: center;
+  gap: 5px;
+  width: 44px;
+  height: 44px;
+  padding: 10px;
   background: transparent;
   border: none;
   cursor: pointer;
   z-index: 1002;
   position: relative;
+  border-radius: var(--radius-sm);
+  transition: background-color var(--transition-fast);
+}
+
+.mobile-toggle:hover {
+  background-color: var(--lm-stone);
 }
 
 .hamburger-line {
   display: block;
-  width: 100%;
+  width: 24px;
   height: 2px;
   background-color: var(--lm-black);
   transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), 
@@ -818,7 +826,7 @@ h1, h2, h3, h4 {
 }
 
 .mobile-toggle[aria-expanded="true"] .hamburger-line:nth-child(1) {
-  transform: translateY(8px) rotate(45deg);
+  transform: translateY(7px) rotate(45deg);
 }
 
 .mobile-toggle[aria-expanded="true"] .hamburger-line:nth-child(2) {
@@ -827,7 +835,7 @@ h1, h2, h3, h4 {
 }
 
 .mobile-toggle[aria-expanded="true"] .hamburger-line:nth-child(3) {
-  transform: translateY(-8px) rotate(-45deg);
+  transform: translateY(-7px) rotate(-45deg);
 }
 
 /* Mobile Nav Drawer */
@@ -980,10 +988,10 @@ h1, h2, h3, h4 {
 /* Hero Section Headline Typography & Staggered Mask Animation */
 .hero-heading {
   font-size: var(--text-hero);
-  font-weight: 800;
+  font-weight: 600;
   font-style: italic;
-  letter-spacing: -0.025em;
-  line-height: 1.08;
+  letter-spacing: -0.012em;
+  line-height: 1.15;
   color: var(--lm-black);
   margin-bottom: 1.6rem;
   text-wrap: balance;
@@ -1019,7 +1027,7 @@ h1, h2, h3, h4 {
 
 .hero-heading em {
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   color: var(--lm-slate);
   position: relative;
   display: inline-block;
@@ -2686,7 +2694,7 @@ h1, h2, h3, h4 {
 /* Large Tablets & Small Laptops (max-width: 1024px) */
 @media (max-width: 1024px) {
   :root {
-    --text-hero: clamp(34px, 5.5vw, 56px);
+    --text-hero: clamp(32px, 4vw, 44px);
   }
 
   .hero-container {
@@ -2755,7 +2763,7 @@ h1, h2, h3, h4 {
 /* Mobile Devices & Small Tablets (max-width: 768px) */
 @media (max-width: 768px) {
   :root {
-    --text-hero: clamp(30px, 7.5vw, 42px);
+    --text-hero: clamp(28px, 4.8vw, 36px);
     --section-pad-y: clamp(3rem, 6vw, 5rem);
   }
 
@@ -2862,7 +2870,7 @@ h1, h2, h3, h4 {
   :root {
     --gutter: clamp(0.9rem, 4vw, 1.25rem);
     --section-pad-y: 3.2rem;
-    --text-hero: clamp(25px, 7.2vw, 34px);
+    --text-hero: clamp(23px, 6vw, 28px);
   }
 
   .announcement-stat,
@@ -2964,7 +2972,7 @@ h1, h2, h3, h4 {
 /* Smallest Mobile Phones (max-width: 360px) */
 @media (max-width: 360px) {
   :root {
-    --text-hero: clamp(22px, 6.8vw, 26px);
+    --text-hero: clamp(20px, 5.8vw, 24px);
   }
 
   .hero-polaroid-floating {
