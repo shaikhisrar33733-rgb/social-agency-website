@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // 2. STICKY HEADER SCROLL DETECTION
   // ==========================================================================
   const header = document.getElementById('header');
-  const scrollThreshold = 40;
+  const scrollThreshold = 35;
 
   const handleHeaderScroll = () => {
     if (!header) return;
@@ -192,7 +192,8 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   if (mobileMenuBtn && mobileNav) {
-    mobileMenuBtn.addEventListener('click', () => {
+    mobileMenuBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
       const isExpanded = mobileMenuBtn.getAttribute('aria-expanded') === 'true';
       if (isExpanded) {
         closeMobileNav();
@@ -201,18 +202,34 @@ document.addEventListener('DOMContentLoaded', () => {
       }
     });
 
+    // Close when clicking any nav link
     mobileLinks.forEach(link => {
       link.addEventListener('click', () => {
         closeMobileNav();
       });
     });
 
+    // Close when clicking outside drawer (on darkened backdrop)
+    mobileNav.addEventListener('click', (e) => {
+      if (e.target === mobileNav) {
+        closeMobileNav();
+      }
+    });
+
+    // Close on Escape key
     window.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
         closeMobileNav();
         mobileMenuBtn.focus();
       }
     });
+
+    // Auto-close on resize to desktop width
+    window.addEventListener('resize', () => {
+      if (window.innerWidth > 991 && mobileNav.classList.contains('active')) {
+        closeMobileNav();
+      }
+    }, { passive: true });
   }
 
   // ==========================================================================
@@ -224,6 +241,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const revealElements = document.querySelectorAll(revealSelector);
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
+  // Hero Section Load Trigger with Staggered Cascades
   const triggerHeroAnimation = () => {
     const heroElements = document.querySelectorAll('#hero .reveal, #hero .reveal-up, #hero .reveal-left, #hero .reveal-right, #hero .reveal-scale, #hero .reveal-text');
     heroElements.forEach(el => el.classList.add('revealed'));
@@ -249,14 +267,16 @@ document.addEventListener('DOMContentLoaded', () => {
         if (entry.isIntersecting) {
           target.classList.add('revealed');
         } else {
-          const isOffscreenBottom = rect.top > viewportHeight + 50;
-          const isOffscreenTop = rect.bottom < -50;
+          const isOffscreenBottom = rect.top > viewportHeight + 45;
+          const isOffscreenTop = rect.bottom < -45;
           const isInsideHero = target.closest('#hero');
 
-          if (isInsideHero && window.scrollY < 180) {
+          // Keep hero visible when user is near the very top
+          if (isInsideHero && window.scrollY < 220) {
             return;
           }
 
+          // Smooth re-reveal when scrolling back in from either direction
           if (isOffscreenBottom || isOffscreenTop) {
             target.classList.remove('revealed');
           }
@@ -266,27 +286,29 @@ document.addEventListener('DOMContentLoaded', () => {
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // Stagger group delay setup
+    // Stagger group delay setup for smooth sequential cards
     const staggerGroups = document.querySelectorAll('.stagger-group');
     staggerGroups.forEach(group => {
       const items = group.querySelectorAll('.stagger-item');
       items.forEach((item, idx) => {
         if (!item.style.getPropertyValue('--stagger-delay')) {
-          item.style.setProperty('--stagger-delay', `${(idx * 0.1) + 0.04}s`);
+          item.style.setProperty('--stagger-delay', `${(idx * 0.08) + 0.04}s`);
         }
       });
     });
 
+    // Run hero entrance smoothly after DOM paint
     requestAnimationFrame(() => {
       setTimeout(triggerHeroAnimation, 60);
     });
   } else {
+    // Fallback for reduced motion or non-supporting browsers
     revealElements.forEach(el => el.classList.add('revealed'));
     const heroHeading = document.getElementById('hero-heading');
     if (heroHeading) heroHeading.classList.add('hero-loaded', 'revealed');
   }
 
-  // Active desktop nav highlight
+  // Active desktop nav link detection on scroll
   const navSections = document.querySelectorAll('section[id]');
   const desktopNavLinks = document.querySelectorAll('.desktop-nav .nav-link');
 
@@ -387,12 +409,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         setTimeout(() => {
-          pathMatchCode.textContent = data.code;
-          pathMatchTitle.textContent = data.title;
-          pathMatchHook.textContent = data.hook;
-          pathDeliverables.textContent = data.deliverables;
-          pathTimeline.textContent = data.timeline;
-          pathIdeal.textContent = data.ideal;
+          if (pathMatchCode) pathMatchCode.textContent = data.code;
+          if (pathMatchTitle) pathMatchTitle.textContent = data.title;
+          if (pathMatchHook) pathMatchHook.textContent = data.hook;
+          if (pathDeliverables) pathDeliverables.textContent = data.deliverables;
+          if (pathTimeline) pathTimeline.textContent = data.timeline;
+          if (pathIdeal) pathIdeal.textContent = data.ideal;
 
           if (cardDisplay) {
             cardDisplay.style.opacity = '1';
@@ -403,9 +425,9 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Pre-fill service in form when clicking Apply on path picker
+  // Pre-fill service in contact form when clicking Apply from path picker
   if (pathApplyBtn) {
-    pathApplyBtn.addEventListener('click', (e) => {
+    pathApplyBtn.addEventListener('click', () => {
       const data = pathData[currentSelectedPath];
       if (data && clientServiceSelect) {
         clientServiceSelect.value = data.serviceOption;
@@ -416,7 +438,7 @@ document.addEventListener('DOMContentLoaded', () => {
   // Pre-fill from service card links
   const serviceCardLinks = document.querySelectorAll('.service-card-link');
   serviceCardLinks.forEach(link => {
-    link.addEventListener('click', (e) => {
+    link.addEventListener('click', () => {
       const prefill = link.getAttribute('data-prefill');
       if (prefill && clientServiceSelect) {
         clientServiceSelect.value = prefill;
@@ -438,7 +460,7 @@ document.addEventListener('DOMContentLoaded', () => {
       const target = parseInt(el.getAttribute('data-count'), 10);
       if (isNaN(target)) return;
 
-      const duration = 1600;
+      const duration = 1500;
       const stepTime = 25;
       const totalSteps = duration / stepTime;
       const increment = target / totalSteps;
@@ -457,12 +479,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 
   const proofBand = document.querySelector('.proof-band-section');
-  if (proofBand && 'IntersectionObserver' in window) {
+  if (proofBand && 'IntersectionObserver' in window && !prefersReducedMotion) {
     const proofObserver = new IntersectionObserver((entries) => {
       if (entries[0].isIntersecting) {
         animateCounters();
       }
-    }, { threshold: 0.2 });
+    }, { threshold: 0.15 });
 
     proofObserver.observe(proofBand);
   } else {
@@ -487,7 +509,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
       const filterVal = btn.getAttribute('data-filter');
 
-      if (portfolioGrid) portfolioGrid.style.opacity = '0.4';
+      if (portfolioGrid) portfolioGrid.style.opacity = '0.35';
 
       setTimeout(() => {
         portfolioItems.forEach(item => {
@@ -500,7 +522,7 @@ document.addEventListener('DOMContentLoaded', () => {
           }
         });
         if (portfolioGrid) portfolioGrid.style.opacity = '1';
-      }, 150);
+      }, 140);
     });
   });
 
@@ -632,10 +654,8 @@ document.addEventListener('DOMContentLoaded', () => {
         hour12: true
       };
       const formatter = new Intl.DateTimeFormat('en-US', options);
-      const parts = formatter.formatToParts(now);
       const timeStr = formatter.format(now);
-      
-      // Determine EST or EDT
+
       const tzString = now.toLocaleDateString('en-US', { timeZone: 'America/New_York', timeZoneName: 'short' });
       const tzName = tzString.split(' ').pop() || 'EST';
 
@@ -666,25 +686,41 @@ document.addEventListener('DOMContentLoaded', () => {
   const submitBtn = document.getElementById('submitInquiryBtn');
 
   if (inquiryForm) {
+    // Clear validation error on input
+    if (nameInput && nameError) {
+      nameInput.addEventListener('input', () => {
+        if (nameInput.value.trim()) nameError.classList.remove('visible');
+      });
+    }
+
+    if (emailInput && emailError) {
+      emailInput.addEventListener('input', () => {
+        const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        if (emailInput.value.trim() && emailRegex.test(emailInput.value.trim())) {
+          emailError.classList.remove('visible');
+        }
+      });
+    }
+
     inquiryForm.addEventListener('submit', (e) => {
       e.preventDefault();
       let isValid = true;
 
       // Validate Name
       if (!nameInput.value.trim()) {
-        nameError.classList.add('visible');
+        if (nameError) nameError.classList.add('visible');
         isValid = false;
       } else {
-        nameError.classList.remove('visible');
+        if (nameError) nameError.classList.remove('visible');
       }
 
       // Validate Email
       const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
       if (!emailInput.value.trim() || !emailRegex.test(emailInput.value.trim())) {
-        emailError.classList.add('visible');
+        if (emailError) emailError.classList.add('visible');
         isValid = false;
       } else {
-        emailError.classList.remove('visible');
+        if (emailError) emailError.classList.remove('visible');
       }
 
       if (!isValid) return;
@@ -695,7 +731,7 @@ document.addEventListener('DOMContentLoaded', () => {
         submitBtn.innerHTML = '<span>Transmitting Application...</span>';
       }
 
-      // Simulate network request
+      // Simulate smooth network completion
       setTimeout(() => {
         if (submitBtn) {
           submitBtn.disabled = false;
@@ -711,9 +747,8 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         inquiryForm.reset();
-
         showToast("Application submitted successfully to Lucci Media.");
-      }, 900);
+      }, 850);
     });
   }
 
@@ -743,14 +778,14 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Smooth scroll for in-page anchors
   document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
+    anchor.addEventListener('click', function (e) {
       const targetId = this.getAttribute('href');
       if (targetId === '#') return;
 
       const targetEl = document.querySelector(targetId);
       if (targetEl) {
         e.preventDefault();
-        const headerOffset = 70;
+        const headerOffset = 68;
         const elementPosition = targetEl.getBoundingClientRect().top;
         const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
