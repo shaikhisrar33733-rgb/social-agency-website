@@ -46,7 +46,7 @@
   --text-h2: clamp(26px, 3.8vw, 36px);
   --text-h1: clamp(32px, 5vw, 48px);
   --text-display: clamp(38px, 6vw, 60px);
-  --text-hero: clamp(34px, 3.8vw, 50px);
+  --text-hero: clamp(32px, 3.6vw, 48px);
 
   /* Shadows (Tactile & Curled Paper) */
   --lm-shadow-subtle: 0 4px 18px rgba(35, 31, 32, 0.05);
@@ -255,12 +255,13 @@ h1, h2, h3, h4 {
 
 .section-title {
   font-size: var(--text-h1);
-  font-weight: 700;
+  font-weight: 600;
   font-style: italic;
+  letter-spacing: -0.012em;
   text-transform: lowercase;
   color: var(--lm-black);
   margin-bottom: 1rem;
-  line-height: 1.15;
+  line-height: 1.18;
 }
 
 .section-intro {
@@ -987,11 +988,12 @@ h1, h2, h3, h4 {
 
 /* Hero Section Headline Typography & Staggered Mask Animation */
 .hero-heading {
+  font-family: var(--font-primary);
   font-size: var(--text-hero);
-  font-weight: 600;
-  font-style: italic;
-  letter-spacing: -0.012em;
-  line-height: 1.15;
+  font-weight: 500;
+  font-style: normal;
+  letter-spacing: -0.014em;
+  line-height: 1.2;
   color: var(--lm-black);
   margin-bottom: 1.6rem;
   text-wrap: balance;
@@ -1006,31 +1008,39 @@ h1, h2, h3, h4 {
 .hero-heading .hero-line-inner {
   display: inline-block;
   transform: translateY(115%);
-  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
-  will-change: transform;
+  opacity: 0;
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.85s ease;
+  will-change: transform, opacity;
 }
 
-.hero-heading.hero-loaded .hero-line:nth-child(1) .hero-line-inner {
+.hero-heading.hero-loaded .hero-line:nth-child(1) .hero-line-inner,
+.hero-heading.revealed .hero-line:nth-child(1) .hero-line-inner {
   transform: translateY(0%);
-  transition-delay: 0.15s;
+  opacity: 1;
+  transition-delay: 0.12s;
 }
 
-.hero-heading.hero-loaded .hero-line:nth-child(2) .hero-line-inner {
+.hero-heading.hero-loaded .hero-line:nth-child(2) .hero-line-inner,
+.hero-heading.revealed .hero-line:nth-child(2) .hero-line-inner {
   transform: translateY(0%);
-  transition-delay: 0.28s;
+  opacity: 1;
+  transition-delay: 0.24s;
 }
 
-.hero-heading.hero-loaded .hero-line:nth-child(3) .hero-line-inner {
+.hero-heading.hero-loaded .hero-line:nth-child(3) .hero-line-inner,
+.hero-heading.revealed .hero-line:nth-child(3) .hero-line-inner {
   transform: translateY(0%);
-  transition-delay: 0.42s;
+  opacity: 1;
+  transition-delay: 0.36s;
 }
 
 .hero-heading em {
   font-style: italic;
-  font-weight: 700;
+  font-weight: 600;
   color: var(--lm-slate);
   position: relative;
   display: inline-block;
+  padding: 0 0.04em;
 }
 
 .hero-subtext {
@@ -1649,12 +1659,13 @@ h1, h2, h3, h4 {
 
 .proof-title {
   font-size: var(--text-display);
-  font-weight: 800;
+  font-weight: 600;
   font-style: italic;
+  letter-spacing: -0.012em;
   text-transform: lowercase;
   color: var(--lm-paper);
   margin-bottom: 1.2rem;
-  line-height: 1.1;
+  line-height: 1.12;
 }
 
 .proof-lead {
@@ -1799,12 +1810,13 @@ h1, h2, h3, h4 {
 
 .about-founder-title {
   font-size: var(--text-h2);
-  font-weight: 700;
+  font-weight: 600;
   font-style: italic;
+  letter-spacing: -0.012em;
   text-transform: lowercase;
   color: var(--lm-black);
   margin-bottom: 1.8rem;
-  line-height: 1.25;
+  line-height: 1.22;
 }
 
 .about-narrative {
@@ -2048,17 +2060,18 @@ h1, h2, h3, h4 {
 
 .cta-main-heading {
   font-size: var(--text-display);
-  font-weight: 800;
+  font-weight: 600;
   font-style: italic;
+  letter-spacing: -0.012em;
   text-transform: lowercase;
   color: var(--lm-paper);
-  line-height: 1.06;
+  line-height: 1.12;
   margin-bottom: 1.2rem;
 }
 
 .cta-main-heading em {
   font-style: italic;
-  font-weight: 900;
+  font-weight: 700;
   text-decoration: underline;
   text-underline-offset: 6px;
 }
@@ -2632,44 +2645,128 @@ h1, h2, h3, h4 {
 }
 
 /* --------------------------------------------------------------------------
-   19. MOTION & BI-DIRECTIONAL SCROLL ANIMATIONS
+   19. MOTION & BI-DIRECTIONAL SCROLL ANIMATIONS (Be Seen Socials Inspired)
    -------------------------------------------------------------------------- */
 .reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-text {
   opacity: 0;
   transition-property: opacity, transform;
-  transition-duration: 0.75s;
-  transition-timing-function: cubic-bezier(0.22, 1, 0.36, 1);
+  transition-duration: 0.8s;
+  transition-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
   will-change: opacity, transform;
 }
 
 .reveal-up {
-  transform: translateY(28px);
+  transform: translateY(24px);
 }
 
 .reveal-left {
-  transform: translateX(-28px);
+  transform: translateX(-24px);
 }
 
 .reveal-right {
-  transform: translateX(28px);
+  transform: translateX(24px);
 }
 
 .reveal-scale {
-  transform: scale(0.96);
+  transform: scale(0.97);
 }
 
-/* Revealed State (Applied & re-applied by IntersectionObserver) */
+/* Masked Text Reveal System (Be Seen Socials "Our Approach" Style) */
+.reveal-text-line {
+  display: block;
+  overflow: hidden;
+  padding-bottom: 0.08em;
+}
+
+.reveal-text-line > .reveal-text-inner {
+  display: inline-block;
+  transform: translateY(115%);
+  opacity: 0;
+  transition: transform 0.85s cubic-bezier(0.16, 1, 0.3, 1), 
+              opacity 0.85s ease;
+  will-change: transform, opacity;
+}
+
+/* Revealed State (Applied & re-applied by IntersectionObserver on scroll down & up) */
 .revealed {
   opacity: 1 !important;
   transform: translate(0, 0) scale(1) !important;
 }
 
-/* Stagger Delay Items */
+.revealed .reveal-text-line > .reveal-text-inner,
+.reveal-text-line.revealed > .reveal-text-inner,
+.reveal-text.revealed .reveal-text-line > .reveal-text-inner,
+.section-header.revealed .reveal-text-line > .reveal-text-inner,
+.proof-header.revealed .reveal-text-line > .reveal-text-inner,
+.about-header-block.revealed .reveal-text-line > .reveal-text-inner,
+.cta-copy-col.revealed .reveal-text-line > .reveal-text-inner,
+.studio-city-text.revealed .reveal-text-line > .reveal-text-inner {
+  transform: translateY(0%);
+  opacity: 1;
+}
+
+/* Stagger line reveals */
+.reveal-text-line:nth-child(1) > .reveal-text-inner { transition-delay: 0.08s; }
+.reveal-text-line:nth-child(2) > .reveal-text-inner { transition-delay: 0.20s; }
+.reveal-text-line:nth-child(3) > .reveal-text-inner { transition-delay: 0.32s; }
+.reveal-text-line:nth-child(4) > .reveal-text-inner { transition-delay: 0.44s; }
+
+/* Subtle paragraph and subtext staggered reveal */
+.section-intro, 
+.proof-lead, 
+.cta-desc,
+.studio-desc,
+.form-card-sub {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.revealed .section-intro,
+.revealed .proof-lead,
+.revealed .cta-desc,
+.revealed .studio-desc,
+.revealed .form-card-sub,
+.section-intro.revealed,
+.proof-lead.revealed,
+.cta-desc.revealed,
+.studio-desc.revealed,
+.form-card-sub.revealed {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.22s;
+}
+
+/* Eyebrow subtle lift */
+.section-eyebrow,
+.proof-eyebrow,
+.studio-eyebrow {
+  opacity: 0;
+  transform: translateY(12px);
+  transition: opacity 0.65s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.65s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.revealed .section-eyebrow,
+.revealed .proof-eyebrow,
+.revealed .studio-eyebrow,
+.section-eyebrow.revealed,
+.proof-eyebrow.revealed,
+.studio-eyebrow.revealed {
+  opacity: 1;
+  transform: translateY(0);
+  transition-delay: 0.04s;
+}
+
+/* Stagger Delay Items (Sequential cards, grid items) */
 .stagger-item {
   opacity: 0;
   transform: translateY(22px);
-  transition: opacity 0.65s cubic-bezier(0.22, 1, 0.36, 1), 
-              transform 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+  transition: opacity 0.75s cubic-bezier(0.16, 1, 0.3, 1), 
+              transform 0.75s cubic-bezier(0.16, 1, 0.3, 1);
   transition-delay: var(--stagger-delay, 0s);
   will-change: opacity, transform;
 }
@@ -2681,11 +2778,11 @@ h1, h2, h3, h4 {
 }
 
 /* Hero Entrance Delays on Page Load */
-.hero-anim-1 { transition-delay: 0.1s; }
-.hero-anim-2 { transition-delay: 0.22s; }
-.hero-anim-3 { transition-delay: 0.35s; }
-.hero-anim-4 { transition-delay: 0.48s; }
-.hero-anim-5 { transition-delay: 0.62s; }
+.hero-anim-1 { transition-delay: 0.08s; }
+.hero-anim-2 { transition-delay: 0.20s; }
+.hero-anim-3 { transition-delay: 0.34s; }
+.hero-anim-4 { transition-delay: 0.46s; }
+.hero-anim-5 { transition-delay: 0.58s; }
 
 /* --------------------------------------------------------------------------
    20. RESPONSIVE BREAKPOINTS (Mobile-First Polish)
@@ -2694,7 +2791,7 @@ h1, h2, h3, h4 {
 /* Large Tablets & Small Laptops (max-width: 1024px) */
 @media (max-width: 1024px) {
   :root {
-    --text-hero: clamp(32px, 4vw, 44px);
+    --text-hero: clamp(28px, 3.8vw, 40px);
   }
 
   .hero-container {
@@ -2763,7 +2860,7 @@ h1, h2, h3, h4 {
 /* Mobile Devices & Small Tablets (max-width: 768px) */
 @media (max-width: 768px) {
   :root {
-    --text-hero: clamp(28px, 4.8vw, 36px);
+    --text-hero: clamp(25px, 4.4vw, 34px);
     --section-pad-y: clamp(3rem, 6vw, 5rem);
   }
 
@@ -2870,7 +2967,19 @@ h1, h2, h3, h4 {
   :root {
     --gutter: clamp(0.9rem, 4vw, 1.25rem);
     --section-pad-y: 3.2rem;
-    --text-hero: clamp(23px, 6vw, 28px);
+    --text-hero: clamp(21px, 5.6vw, 26px);
+  }
+
+  .hero-heading {
+    text-wrap: balance;
+    word-break: normal;
+    overflow-wrap: break-word;
+    hyphens: none;
+    line-height: 1.22;
+  }
+
+  .hero-heading .hero-line {
+    padding-bottom: 0.05em;
   }
 
   .announcement-stat,
@@ -2972,7 +3081,7 @@ h1, h2, h3, h4 {
 /* Smallest Mobile Phones (max-width: 360px) */
 @media (max-width: 360px) {
   :root {
-    --text-hero: clamp(20px, 5.8vw, 24px);
+    --text-hero: clamp(19px, 5.4vw, 22px);
   }
 
   .hero-polaroid-floating {
@@ -3009,10 +3118,22 @@ h1, h2, h3, h4 {
   .reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-scale, .reveal-text, .stagger-item {
     opacity: 1 !important;
     transform: none !important;
+    transition: none !important;
   }
 
-  .hero-heading .hero-line-inner {
+  .hero-heading .hero-line-inner,
+  .reveal-text-line > .reveal-text-inner,
+  .section-intro,
+  .proof-lead,
+  .cta-desc,
+  .studio-desc,
+  .form-card-sub,
+  .section-eyebrow,
+  .proof-eyebrow,
+  .studio-eyebrow {
+    opacity: 1 !important;
     transform: none !important;
+    transition: none !important;
   }
 
   .marquee-track, .monogram-circle-text {

@@ -233,11 +233,11 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   // ==========================================================================
-  // 4. INTERSECTION OBSERVER FOR BI-DIRECTIONAL SCROLL ANIMATIONS
+  // 4. INTERSECTION OBSERVER FOR BI-DIRECTIONAL SCROLL ANIMATIONS (Be Seen Socials Inspired)
   // ==========================================================================
   document.documentElement.classList.add('js-anim-ready');
 
-  const revealSelector = '.reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-scale, .stagger-item, .reveal-text';
+  const revealSelector = '.reveal, .reveal-up, .reveal-left, .reveal-right, .reveal-scale, .stagger-item, .reveal-text, .section-header, .proof-header, .about-header-block, .cta-message-col, .studio-city-text, .studio-city-banner';
   const revealElements = document.querySelectorAll(revealSelector);
   const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
@@ -255,7 +255,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const observerOptions = {
       root: null,
       rootMargin: '0px 0px -40px 0px',
-      threshold: [0, 0.15]
+      threshold: [0, 0.12]
     };
 
     const revealObserver = new IntersectionObserver((entries) => {
@@ -272,7 +272,7 @@ document.addEventListener('DOMContentLoaded', () => {
           const isInsideHero = target.closest('#hero');
 
           // Keep hero visible when user is near the very top
-          if (isInsideHero && window.scrollY < 220) {
+          if (isInsideHero && window.scrollY < 200) {
             return;
           }
 
